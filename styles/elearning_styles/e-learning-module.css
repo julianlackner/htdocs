@@ -1,0 +1,181 @@
+/* Hintergrundfarbe für den Body */
+body {
+    background-color: #525659;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Verhindert unnötiges Scrollen */
+}
+
+
+/* PDF Frame */
+.pdfframe {
+    width: 100%; /* Volle Breite */
+    max-width: 1200px; /* Maximalbreite für größere Bildschirme */
+    height: calc(100vh - 0px); /* Höhe füllt den sichtbaren Bereich aus */
+    border: none;
+    margin: auto; /* Zentrierung */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sanfter Schatten */
+    position: absolute; /* Ermöglicht Zentrierung */
+    top: 50%; /* Mittig vom oberen Rand */
+    left: 50%; /* Mittig vom linken Rand */
+    transform: translate(-50%, -50%); /* Verschiebt um die Hälfte der Breite und Höhe */
+    z-index: 5; /* Sicherstellen, dass die PDF sichtbar ist */
+}
+
+/* Buttons */
+
+.button_elearning_option {
+    display: flex; /* Flexbox aktivieren */
+    align-items: center; /* Vertikale Zentrierung */
+    justify-content: center; /* Horizontale Zentrierung */
+    padding: 10px 20px;
+    background-color: #708090;
+    margin: 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    width: 15em;
+    height: 5em;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+
+
+
+
+
+/* Sidebar */
+.side-bar_elearning {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100vh;
+    background-color: #f4f4f4;
+    box-shadow: 3px 0 8px rgba(0, 0, 0, 0.1);
+    border-right: 2px solid #dcdcdc;
+    z-index: 10; /* Sicherstellen, dass Sidebar über dem PDF liegt */
+    padding: 20px 10px;
+    text-align: center;
+    overflow-y: auto; /* Ermöglicht Scrollen bei zu viel Inhalt */
+}
+
+    /* Sidebar Text */
+    .side-bar_elearning h1,
+    .side-bar_elearning h2 {
+        color: #333;
+        margin: 20px 0;
+    }
+
+/*Button*/
+.modulauswahl{
+
+      display: flex; /* Flexbox aktivieren */
+      align-items: center; /* Vertikale Zentrierung */
+      justify-content: center; /* Horizontale Zentrierung */
+      padding: 10px 20px;
+      background-color: #2d0879;
+      margin: 20px;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+      width: 15em;
+      height: 5em;
+      font-size: 1em;
+      cursor: pointer;
+  }
+
+}
+.modulauswahl:hover {
+    background-color: #3a1099; /* Hellerer Farbton beim Hover */
+}
+@media (max-width: 768px) {
+    /* Grauer Balken oben mit Buttons */
+
+
+
+    .side-bar_elearning {
+        background-color: #f4f4f4;
+        height: 60px; /* Höhe des grauen Balkens */
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Buttons zentrieren */
+        padding: 0 10px; /* Innenabstand für sauberes Layout */
+        position: fixed; /* Fixiert den Balken oben */
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10; /* Über der PDF */
+    }
+
+    .pdfframe {
+        width: 70%; /* Volle Breite */
+
+        max-width: 660px; /* Maximalbreite für größere Bildschirme */
+        height: calc(100vh - 100px); /* Höhe füllt den sichtbaren Bereich aus */
+        border: none;
+        margin: auto; /* Zentrierung */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sanfter Schatten */
+        position: absolute; /* Ermöglicht Zentrierung */
+        top: 50%; /* Mittig vom oberen Rand */
+        left: 50%; /* Mittig vom linken Rand */
+        transform: translate(-50%, -50%); /* Verschiebt um die Hälfte der Breite und Höhe */
+        z-index: 5; /* Sicherstellen, dass die PDF sichtbar ist */
+    }
+
+    /* Buttons für mobile Ansicht */
+    .button_elearning {
+
+
+        font-size: 10px;
+        margin: 0 10px; /* Abstand zwischen den Buttons */
+    }
+
+    .modulauswahl {
+        display: flex; /* Flexbox aktivieren */
+        align-items: center; /* Vertikale Zentrierung */
+        justify-content: center; /* Horizontale Zentrierung */
+        padding: 5px 10px; /* Weniger Innenabstand */
+        background-color: #2d0879;
+        margin: 10px; /* Weniger Abstand zwischen Buttons */
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+        width: 3em; /* Kleinere Breite */
+        height: 1em; /* Kleinere Höhe */
+        font-size: 0.2em; /* Kleinere Schriftgröße */
+        cursor: pointer;
+    }
+
+    .button_elearning_option {
+        display: flex; /* Flexbox aktivieren */
+        align-items: center; /* Vertikale Zentrierung */
+        justify-content: center; /* Horizontale Zentrierung */
+        padding: 5px 10px; /* Weniger Innenabstand */
+        background-color: #708090;
+        margin: 10px; /* Weniger Abstand zwischen Buttons */
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+        width: 3em; /* Kleinere Breite */
+        height: 1em; /* Kleinere Höhe */
+        font-size: 5px; /* Kleinere Schriftgröße */
+        cursor: pointer;
+    }
+
+    .side-bar_elearning h1 {
+        font-size: 10px;
+    }
+    .side-bar_elearning h2 {
+        font-size: 8px;
+    }
+
+
+
+
+}

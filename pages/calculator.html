@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===================================
+         Start: Verlinkung zugehöriger Dateien
+         =================================== -->
+    <link rel="stylesheet" type="text/css" href="../styles/calculator.css">
+    <link rel="stylesheet" type="text/css" href="../styles/main.css">
+    <script src="../scripts/calculator.js"></script>
+    <script src="../scripts/function_main.js" defer></script>
+    <script src="../scripts/loadcomponents.js" defer></script>
+    <!-- ===================================
+         Ende: Verlinkung zugehöriger Dateien
+         =================================== -->
+
+    <title>Papiertechnik.at | Review</title>
+</head>
+
+<body>
+
+
+    <main class="main-content">
+      <!-- Hauptbereich -->
+      <section class="information-card">
+        <h2>Papiertechnischer Taschenrechner</h2>
+        <p>Nutzen Sie verschiedene Tools des Papiertechnischen Taschenrechners</p>
+      </section>
+
+
+
+
+        <h2 id="ueberschrift-tools">Tools</h2>
+      <!-- Rechnerbereich -->
+      <section class="calculator-main">
+
+
+        <!-- Rohdichte Rechner -->
+        <section id="rohdichte" class="calculator-card">
+            <h2>Rohdichte</h2>
+            <p>Berechnen Sie die Rohdichte Ihrer Probe.</p>
+            <button id="button-rohdichte" class="toggle-menu" data-target="submenu-rohdichte">Rohdichte</button>
+            <!-- Verstecktes Untermenü -->
+              <div id="submenu-rohdichte" class="hidden">
+                <label for="fbm">Flächenbezogene Masse [g/m²]:</label>
+                <input type="number" id="fbm" placeholder="z.B. 80">
+                <br><br>
+                <label for="dicke">Papierdicke [µm]:</label>
+                <input type="number" id="dicke" placeholder="z.B. 100">
+                <br><br>
+                <button id="berechnen-button-rohdichte">Berechnen</button>
+                <p id="resultrohdichte"></p>
+                <button id="reset-button-rohdichte">Zurücksetzen ↺</button>
+            </div>
+        </section>
+
+        <!-- Spezifisches Volumen Rechner -->
+        <section id="spezifisches_volumen" class="calculator-card">
+          <h2>Spezifisches Volumen</h2>
+          <p>Berechnen Sie das spezifische Volumen Ihrer Probe.</p>
+          <button id="button-spezvolumen" class="toggle-menu" data-target="submenu-spezvolumen">Spez. Volumen</button>
+          <!-- Verstecktes Untermenü -->
+            <div id="submenu-spezvolumen" class="hidden">
+                <label for="mass">Masse [g]:</label>
+                <input type="number" id="mass" placeholder="z.B. 10">
+                <br><br>
+                <label for="vol">Volumen [cm³]:</label>
+                <input type="number" id="vol" placeholder="z.B. 5">
+                <br><br>
+                <button id="berechnen-button-spezvolumen">Berechnen</button>
+                <p id="resultspezvolumen"></p>
+                <button id="reset-button-spezvolumen">Zurücksetzen ↺</button>
+            </div>
+        </section>
+
+        <!-- wasseraufnahme Rechner -->
+        <section id="wasseraufnahme" class="calculator-card">
+          <h2>Wasseraufnahme</h2>
+          <p>Berechnen Sie die Wasseraufnahme ihrer Probe.</p>
+          <button id="button-wasseraufnahme" class="toggle-menu" data-target="submenu-wasseraufnahme">Wasseraufnahme</button>
+          <!-- Verstecktes Untermenü -->
+            <div id="submenu-wasseraufnahme" class="hidden">
+                <label for="gewicht-nach">Gewicht der Probe nach der Wasseraufnahme in [g]:</label>
+                <input type="number" id="gewicht-nach" placeholder="z.B. 80">
+                <br><br>
+                <label for="gewicht-vor">Gewicht der Probe vor der Wasseraufnahme in [g]:</label>
+                <input type="number" id="gewicht-vor" placeholder="z.B. 100">
+                <br><br>
+                <button id="berechnen-button-wasseraufnahme">Berechnen</button>
+                <p id="resultwasseraufnahme"></p>
+                <button id="reset-button-wasseraufnahme">Zurücksetzen ↺</button>
+            </div>
+        </section>
+
+
+        <!-- stoffdichte Rechner -->
+        <section id="stoffdichte" class="calculator-card">
+          <h2>Stoffdichte</h2>
+          <p>Berechnen Sie die Stoffdichte ihrer nassen Probe.</p>
+          <button id="button-stoffdichte" class="toggle-menu" data-target="submenu-stoffdichte">Stoffdichte</button>
+          <!-- Verstecktes Untermenü -->
+            <div id="submenu-stoffdichte" class="hidden">
+                <label for="masse-trocken">Gewicht der trockenen Probe in [g]:</label>
+                <input type="number" id="masse-trocken" placeholder="z.B. 80">
+                <br><br>
+                <label for="masse-feucht">Gewicht der nassen Stoffprobe in [g]:</label>
+                <input type="number" id="masse-feucht" placeholder="z.B. 100">
+                <br><br>
+                <button id="berechnen-button-stoffdichte">Berechnen</button>
+                <p id="resultstoffdichte"></p>
+                <button id="reset-button-stoffdichte">Zurücksetzen ↺</button>
+              </div>
+
+
+
+
+    </main>
+
+
+
+</body>
+</html>

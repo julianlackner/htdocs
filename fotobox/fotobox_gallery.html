@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Verlinkung zu den CSS-Dateien -->
+    <link rel="stylesheet" href="../fotobox/fotobox_gallery.css">
+    <link rel="stylesheet" href="../fotobox/fotobox.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cagliostro&display=swap" rel="stylesheet">
+
+    <!-- Verlinkung zu JavaScript-Datei -->
+    <script src="../fotobox/fotobox.js" defer></script>
+
+    <title>Gallerie</title>
+</head>
+
+<body>
+    <h1 class="ueberschrift">Fotogallerie</h1>
+
+    <div class="grid" id="galleryGrid"></div>
+
+    <!-- Modal für das vergrößerte Bild -->
+    <div id="fullImageModal" class="modal">
+      <span class="close">&times;</span>
+      <img id="fullImage" src="" alt="Vollbild">
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+
+        // Bilder laden und in der Galerie anzeigen
+        async function loadImages() {
+          try {
+            const response = await fetch('load_images.php');
+            if (!response.ok) {
+              throw new Error(`HTTP-Fehler: ${response.status}`);
+            }
+
+            const images = await response.json();
+            const grid = document.getElementById('galleryGrid');
+            grid.innerHTML = ''; // Grid zurücksetzen
+
+            images.forEach(image => {
+              const imgElement = document.createElement('img');
+              imgElement.src = `images/${image}`;
+              imgElement.alt = image;
+              imgElement.loading = 'lazy'; // Optimierung für langsames Laden
+              imgElement.onclick = () => showFullImage(`images/${image}`);
+              grid.appendChild(imgElement);
+            });
+          } catch (error) {
+            console.error('Fehler beim Laden der Bilder:', error);
+          }
+        }
+
+        // Funktion zum Anzeigen des vergrößerten Bildes im Modal
+        function showFullImage(src) {
+          const fullImageModal = document.getElementById('fullImageModal');
+          const fullImage = document.getElementById('fullImage');
+
+          fullImage.src = src;
+          fullImageModal.style.display = 'flex'; // Modal sichtbar machen
+        }
+
+        // Funktion zum Schließen des Modals
+        function closeModal(event) {
+          const fullImageModal = document.getElementById('fullImageModal');
+
+          // Wenn auf den Hintergrund oder das Schließ-Symbol geklickt wird, Modal schließen
+          if (event.target === fullImageModal || event.target.classList.contains('close')) {
+            fullImageModal.style.display = 'none'; // Modal schließen
+          }
+        }
+
+        // Schließen des Modals bei Klick auf den Hintergrund oder das "×"-Symbol
+        const fullImageModal = document.getElementById('fullImageModal');
+        const closeButton = document.querySelector('.close');
+
+        fullImageModal.addEventListener('click', closeModal);
+        closeButton.addEventListener('click', closeModal);
+
+        // Initiales Laden und regelmäßige Aktualisierung
+        loadImages();
+        setInterval(loadImages, 10000);
+      });
+    </script>
+</body>
+</html>

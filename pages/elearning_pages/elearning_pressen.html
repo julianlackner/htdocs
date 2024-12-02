@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../styles/main.css">
+    <link rel="stylesheet" type="text/css" href="../../styles/elearning_styles/e-learning-module.css">
+    <script src="../../scripts/elearning-module.js"></script>
+    <title>Pressen</title>
+</head>
+<body>
+
+
+  <div class="side-bar_elearning">
+    <!-- Buttons für verschiedene PDFs-->
+    <h1>Pressen</h1>
+    <h2>Modulauswahl</h2>
+    <button class="modulauswahl" onclick="loadPDF('../../documents/modul_1.pdf')">Modul 1</button>
+    <button class="modulauswahl" onclick="loadPDF('../../documents/modul_2.pdf')">Modul 2</button>
+    <button class="modulauswahl" onclick="loadPDF('../../documents/modul_3.pdf')">Modul 3</button>
+
+    <!-- Buttons für zurück und neu laden-->
+    <h2>Optionen</h2>
+    <button class="button_elearning_option" onclick="window.location.href='../../index.html'">Zur Startseite</button>
+    <button class="button_elearning_option" onclick="window.location.href='../../pages/elearning-papiertechnik.html'">Zur Übersicht</button>
+    <button class="button_elearning_option" onclick="window.location.href='../../pages/elearning_pages/elearning_pressen.html'">
+    E-Learning neu laden:
+    </button>
+  </div>
+
+<object id="pdfViewer" data="../../documents/modul_1.pdf" type="application/pdf" class="pdfframe" width="100%" height="calc(100vh - 140px)"></object>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

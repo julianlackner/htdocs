@@ -1,0 +1,146 @@
+.hidden {
+    display: none;
+}
+
+.calculator-main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px;
+
+    margin: auto;
+}
+
+.calculator-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    color:black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Sorgt für sauberen vertikalen Abstand */
+    align-items: center; /* Zentriert alles horizontal */
+    height: 100%;
+  }
+    .calculator-card {
+    max-width: 350px; /* Die Karten sind nie breiter als 350px */
+    width: 100%; /* Nutzt den verfügbaren Platz */
+}
+
+  }
+    .calculator-card:hover {
+transform: scale(1.05);
+}
+
+.calculator-card section {
+    display: flex;
+    gap: 1em; /* Abstand zwischen den Buttons */
+    flex-wrap: wrap; /* Bei kleineren Bildschirmen umbrechen */
+    justify-content: center; /* Buttons horizontal zentrieren */
+    align-items: center; /* Buttons vertikal zentrieren */
+    width: 100%; /* Nutze die gesamte Breite */
+    margin-top: 20px; /* Abstand zum oberen Inhalt */
+}
+
+#button-rohdichte,
+#button-spezvolumen,
+#button-wasseraufnahme,
+#button-stoffdichte{
+    display: inline-block;
+    padding: 10px;
+    font-size: 1rem; /* 16px Standard-Schriftgröße */
+    background-color: #2d0879;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    line-height: 1.2; /* Bessere Textlesbarkeit */
+}
+
+
+
+
+/* Spezifische Stile für die Berechnung und den Reset innerhalb der section */
+section #berechnen-button-spezvolumen,
+section #berechnen-button-rohdichte,
+section #berechnen-button-wasseraufnahme,
+section #berechnen-button-stoffdichte{
+    display: inline-flex;
+    justify-content: center; /* Text horizontal zentrieren */
+    align-items: center; /* Text vertikal zentrieren */
+    font-size: 1rem; /* Einheitliche Schriftgröße */
+    padding: 0.5em 1em;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    min-width: 8em; /* Einheitliche Mindestbreite */
+    min-height: 2.5em; /* Einheitliche Mindesthöhe */
+    text-decoration: none;
+    background-color: #2d0879
+}
+
+
+
+#reset-button-rohdichte,
+#reset-button-spezvolumen,
+#reset-button-wasseraufnahme,
+#reset-button-stoffdichte{
+    background-color: red;
+    display: inline-flex;
+    justify-content: center; /* Text horizontal zentrieren */
+    align-items: center; /* Text vertikal zentrieren */
+    font-size: 1rem; /* Einheitliche Schriftgröße */
+    padding: 0.5em 1em;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    min-width: 8em; /* Einheitliche Mindestbreite */
+    min-height: 2.5em; /* Einheitliche Mindesthöhe */
+    text-decoration: none;
+
+}
+
+
+/* Hover-Effekte */
+section #berechnen-button-spezvolumen:hover,
+section #berechnen-button-rohdichte:hover,
+section #berechnen-button-wasseraufnahme:hover
+section #berechnen-button-stoffdichte:hover{
+    transform: scale(1.05);
+    background-color: #1b064f;
+}
+
+#reset-button-rohdichte:hover,
+#reset-button-spezvolumen:hover,
+#reset-button-wasseraufnahme:hover
+#reset-button-stoffdichte:hover {
+    background-color: #b30000;
+    transform: scale(1.05);
+}
+
+/* Eingabefelder zentrieren */
+.calculator-card input {
+    margin: 10px 0; /* Abstand zwischen Eingabefeldern */
+    width: 80%; /* Eingabefelder breiter machen */
+    padding: 0.5em;
+    font-size: 1rem;
+}
+
+#ueberschrift-tools{
+
+    text-align: center;
+    font-size: 1,5rem;
+
+
+
+
+}

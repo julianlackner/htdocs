@@ -1,0 +1,432 @@
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+
+    color: white; /* Standard-Textfarbe */
+    overflow-x: hidden; /* Verhindert horizontales Scrollen */
+    background:linear-gradient(to bottom, rgba(9,1,102,1) 0%, rgba(12,0,154,1) 5%, rgba(0,91,244,1) 34%, rgba(255,255,255,1) 100%);
+);
+
+}
+
+/* Header Styles */
+.top-bar {
+    width: 100%;
+    height:250px;
+    /*background-color: #2d0879; /* Hintergrundfarbe des Headers */
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: static;
+    top: 0;
+    z-index: 2;
+}
+
+/* H1 Styles */
+.main-title {
+    font-size: 2.5rem; /* Schriftgröße */
+    color: white; /* Textfarbe */
+    margin: 5px 0 20px 0; /* Abstand um die Überschrift */
+    font-family: Arial, sans-serif; /* Schriftart */
+    text-align: center; /* Zentriert den Text horizontal */
+}
+
+/* Navigation Icons Container */
+.icon-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; /* Abstand zwischen den Icons */
+    justify-content: center; /* Zentriert die Icons */
+    align-items: center; /* Vertikale Ausrichtung */
+    margin-top: 10px; /* Abstand oberhalb der Icons */
+    z-index: 3;
+    filter: invert(100%);
+
+}
+
+/* Icon Wrapper */
+.icon-wrapper {
+    display: flex;
+    flex-direction: column; /* Text unterhalb des Icons */
+    align-items: center;
+    text-align: center;
+
+}
+
+/* Icon Images */
+.nav-image {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Sanfter Hover-Effekt */
+}
+
+.nav-image:hover {
+    transform: scale(1.2); /* Vergrößert das Icon leicht beim Hover */
+}
+
+/* Icon Text */
+.nav-text {
+    margin-top: 2px; /* Abstand zwischen Icon und Text */
+    font-size: 0.9rem; /* Schriftgröße */
+    color: white; /* Textfarbe passend zum Header */
+    text-decoration: none; /* Kein Unterstrich */
+    text-align: center;
+    font-family: Arial, sans-serif;
+    filter: invert(100%);
+
+}
+
+
+/* ===================================
+   Navigationsbild
+=================================== */
+
+.image-map {
+    position: absolute;
+    margin-top: 190px; /* Kein Abstand von oben */
+    left: 50%; /* Horizontale Zentrierung */
+    transform: translate(-50%, 0); /* Zentrierung */
+    width: 100%;
+    max-width: 1400px; /* Maximale Breite */
+    height: auto; /* Beibehaltung des Seitenverhältnisses */
+    z-index: 2;
+}
+
+/* ===================================
+   Themenkarten
+=================================== */
+
+.themenbibliothek {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.themengebiet-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.themengebiet-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.themengebiet-card h2 {
+    color: #2d0879;
+    margin-bottom: 10px;
+}
+
+.themengebiet-card p {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.button-elearning {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2d0879;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.button-elearning:hover {
+    background-color: #450b9e;
+}
+
+/* Farbige Buttons */
+#button-papiertechnik { background-color: #2d0879; }
+#button-zellstofftechnik { background-color: #EEB422; }
+#button-umwelttechnik { background-color: #3CB371; }
+#button-verfahrenstechnik { background-color: #FF6347; }
+
+
+
+#button-papiertechnik:hover { background-color: #450b9e; }
+#button-zellstofftechnik:hover { background-color: #d4a30c; }
+#button-umwelttechnik:hover { background-color: #2e8b57; }
+#button-verfahrenstechnik:hover { background-color: #d94e38; }
+
+
+/* ===================================
+   Footer
+=================================== */
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.footer-section {
+    flex: 1 1 100%;
+    margin: 10px 0;
+}
+
+.footer-section ul {
+    padding: 0;
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+
+.infotext {
+
+    color: white; /* Textfarbe für gute Lesbarkeit */
+    padding: 20px;
+    margin: 20px auto;
+
+
+    max-width: 900px; /* Breite des Containers */
+    font-family: Arial, sans-serif;
+    text-align: justify; /* Text ausrichten für sauberes Layout */
+}
+
+.infotext h2 {
+    font-size: 1.8rem; /* Größere Schriftgröße für die Überschrift */
+    margin-bottom: 15px;
+    color: #f7f7f7; /* Helle Farbe für die Überschrift */
+    text-align: center; /* Zentrierte Überschrift */
+}
+
+.infotext p {
+    font-size: 1rem; /* Standard-Schriftgröße */
+    line-height: 1.6; /* Zeilenhöhe für bessere Lesbarkeit */
+    margin: 0;
+    color: #ffffff; /* Helle Farbe für den Text */
+}
+
+/*Sidebar Code Start:*/
+.sidebar {
+    height: 100%; /* Volle Höhe des Viewports */
+    width: 0; /* Versteckt die Sidebar standardmäßig */
+    position: fixed; /* Fixiert die Sidebar */
+    z-index: 10; /* Über anderen Inhalten */
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom,
+        rgba(9, 1, 102, 0.5) 0%,
+        rgba(12, 0, 154, 0.5) 5%,
+        rgba(0, 91, 244, 0.5) 34%,
+        rgba(255, 255, 255, 0.5) 100%
+    );
+    overflow-x: hidden; /* Kein horizontaler Scrollbalken */
+    transition: 0.3s; /* Smooth-Effekt beim Öffnen/Schließen */
+    padding-top: 60px; /* Platz für Inhalte oben */
+}
+
+/* Links in der Sidebar */
+.sidebar a {
+    display: flex; /* Flexbox für horizontale Anordnung */
+    align-items: center; /* Zentriert Icon und Text vertikal */
+    gap: 10px; /* Abstand zwischen Icon und Text */
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+    transition: 0.2s;
+}
+
+/* Icons */
+.sidebar-image {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    transition: transform 0.3s ease; /* Sanfter Hover-Effekt */
+    cursor: pointer;
+    filter: invert(100%);
+}
+
+/* Hover-Effekt für Links */
+.sidebar a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Schließen-Button */
+.sidebar .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.8rem;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Öffnen-Button */
+.openbtn {
+    font-size: 1.5rem;
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 0.2s;
+
+}
+
+.openbtn:hover {
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6),
+                0 0 30px rgba(255, 255, 255, 0.4),
+                0 0 60px rgba(255, 255, 255, 0.2);
+}
+
+
+/*Sidebar Code Ende:*/
+
+
+
+/* Hauptinhalt */
+#main {
+    padding: 20px;
+}
+
+/* Wenn die Sidebar offen ist */
+#sidebar.active {
+    width: 250px; /* Breite der Sidebar, wenn sie offen ist */
+}
+
+/* ===================================
+   Mobile Optimierungen
+=================================== */
+
+@media (max-width: 768px) {
+    /* Sidebar Anpassungen */
+    .sidebar {
+        height: auto; /* Automatische Höhe der Sidebar */
+    }
+
+    .sidebar.open {
+        height: 100%; /* Sidebar füllt die gesamte Höhe */
+        width: 100%; /* Sidebar füllt die gesamte Breite */
+    }
+
+    .sidebar a {
+        font-size: 1rem; /* Einheitliche Schriftgröße */
+        padding: 8px 10px; /* Konsistenter Abstand */
+    }
+
+    .sidebar-image {
+        width: 16px;
+        height: 16px; /* Proportionale Anpassung für Icons */
+    }
+
+    /* Header Anpassungen */
+    .top-bar {
+        height: auto; /* Dynamische Höhe je nach Inhalt */
+        padding: 10px; /* Reduzierter Abstand für mobile Ansicht */
+    }
+
+    .main-title {
+        font-size: 1.5rem; /* Anpassung für kleinere Bildschirme */
+        margin: 10px 0; /* Einheitlicher Abstand */
+    }
+
+    .icon-container {
+        gap: 10px; /* Verringerter Abstand zwischen Icons */
+    }
+
+    .nav-image {
+        width: 50px;
+        height: 50px; /* Konsistentes Seitenverhältnis */
+    }
+
+    .nav-text {
+        font-size: 0.8rem; /* Kleinere Schriftgröße */
+    }
+
+    /* Image Map Anpassungen */
+    .image-map {
+        margin-top: 120px; /* Reduzierter Abstand */
+        max-width: 100%; /* Maximale Breite passt sich an */
+    }
+
+    /* Themenkarten Anpassungen */
+    .themenbibliothek {
+        display: grid; /* Sicherstellen, dass Grid-Layout erhalten bleibt */
+        grid-template-columns: 1fr; /* Einzelspaltige Anordnung */
+        gap: 15px; /* Einheitlicher Abstand zwischen Karten */
+        padding: 10px; /* Reduzierter Innenabstand */
+    }
+
+    .themengebiet-card {
+        padding: 15px; /* Konsistenter Innenabstand */
+    }
+
+    .themengebiet-card h2 {
+        font-size: 1.2rem; /* Kleinere Überschriften */
+    }
+
+    .themengebiet-card p {
+        font-size: 0.9rem; /* Kleinere Beschreibung */
+    }
+
+    /* Karte und Pins Anpassungen */
+    .map-container {
+        padding: 10px; /* Einheitliche Abstände */
+    }
+
+    .map-image {
+        width: 100%; /* Dynamische Breite */
+        max-width: 100%; /* Keine Maximalbegrenzung */
+    }
+
+    .pin {
+        width: 20px; /* Kleinere Größe für Pins */
+        height: 20px; /* Konsistente Proportionen */
+    }
+
+    /* Footer Anpassungen */
+    .footer {
+        padding: 10px; /* Reduzierte Abstände */
+        text-align: center; /* Zentrierter Text */
+    }
+
+    .footer-section {
+        margin: 5px 0; /* Konsistenter Abstand */
+    }
+
+    .footer-section ul li {
+        margin: 2px 0; /* Einheitlicher Abstand */
+    }
+
+    /* Infotext Anpassungen */
+    .infotext {
+        padding: 10px; /* Einheitliche Abstände */
+        margin: 10px auto; /* Zentriert für mobile Ansicht */
+        font-size: 0.9rem; /* Kleinere Schriftgröße */
+    }
+
+    .infotext h2 {
+        font-size: 1.5rem; /* Kleinere Überschrift */
+        margin-bottom: 10px; /* Konsistenter Abstand */
+    }
+
+    /* Button Anpassungen */
+    .button-elearning {
+        padding: 8px 15px; /* Kleinere Buttons für mobile Ansicht */
+        font-size: 0.9rem; /* Einheitliche Schriftgröße */
+    }
+}

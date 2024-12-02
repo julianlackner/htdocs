@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: "Cagliostro", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background: linear-gradient(to bottom,
+    #ffffff,
+    #fcfcfc,
+    #f9f9f9,
+    #f6f6f6,
+    #f3f3f3,
+    #efefef,
+    #ececec,
+    #e9e9e9,
+    #e6e6e6,
+    #e3e3e3
+  );
+  display: flex; /* Aktiviert Flexbox */
+  flex-direction: column; /* Stellt sicher, dass die Elemente vertikal ausgerichtet sind */
+
+  align-items: center; /* Zentriert die Elemente horizontal */
+  text-align: center; /* Zentriert den Text */
+}
+
+h1.ueberschrift {
+  background: linear-gradient(to bottom,
+   #70ffe7,
+   #72f8ea,
+   #74f1ec,
+   #75eaef,
+   #77e3f2,
+   #79ddf4,
+   #7bd6f7,
+   #7ccffa,
+   #7ec8fc,
+   #80c1ff
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 4em;
+  margin-top: 50px;
+  /* text-shadow entfernt */
+}
+
+
+h2 {
+  margin-top: 20px; /* Füge etwas Abstand zwischen den Überschriften hinzu */
+  font-size: 3em;
+}/* Container für die Buttons, Flexbox für horizontale Ausrichtung */
+.button-container {
+  display: flex; /* Flexbox aktivieren */
+  justify-content: center; /* Horizontale Zentrierung der Buttons */
+  gap: 50px; /* Abstand zwischen den Buttons */
+  margin-top: 40px; /* Abstand nach oben */
+}
+
+/* Standardstil für die Buttons */
+.button_aktion {
+  font-family: "Cagliostro", sans-serif;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  border:none;
+  transition: background-color 0.3s ease;
+  width: 15em;
+  height: 5em;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+#button_1.button_aktion {
+  background: linear-gradient(to bottom,
+  #00ff04,
+  #0cff10,
+  #19ff1d,
+  #25ff29,
+  #32ff35,
+  #3eff42,
+  #4bff4e,
+  #57ff5a,
+  #64ff67,
+  #70ff73
+  ); /* Farbverlauf für den Hintergrund */
+}
+
+/* Anpassungen für den zweiten Button */
+#button_2.button_aktion {
+    background: linear-gradient(to bottom,
+      #0062ff,
+       #0966ff,
+       #116aff,
+       #1a6fff,
+       #2273ff,
+       #2b77ff,
+       #337bff,
+       #3c80ff,
+       #4484ff,
+       #4d88ff
+  ); /* Farbverlauf für den Hintergrund */
+
+}

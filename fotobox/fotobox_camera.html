@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fotobox Kamera</title>
+  <style>
+    #countdown {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 5rem;
+      color: red;
+      font-weight: bold;
+      display: none;
+    }
+    #capturedImage {
+      display: none;
+      max-width: 100%;
+      margin-top: 20px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Fotobox Kamera</h1>
+  <video id="videoElement" autoplay playsinline width="640" height="480" style="border: 1px solid black;"></video>
+  <br>
+  <canvas id="canvas" width="640" height="480" style="display: none;"></canvas>
+  <div id="countdown">3</div>
+  <button id="captureButton">Bild aufnehmen</button>
+
+  <script>
+    let currentStream;
+
+    async function startCamera() {
+      try {
+        currentStream = await navigator.mediaDevices.getUserMedia({ video: true });
+        document.getElementById('videoElement').srcObject = currentStream;
+      } catch (error) {
+        console.error("Fehler beim Zugriff auf die Kamera: ", error);
+        alert("Fehler beim Zugriff auf die Kamera: " + error.message);
+      }
+    }
+
+    function startCountdownAndCapture() {
+      let countdown = 3;
+      const countdownElement = document.getElementById('countdown');
+      countdownElement.style.display = 'block';
+      countdownElement.textContent = countdown;
+
+      const interval = setInterval(() => {
+        countdown--;
+        countdownElement.textContent = countdown;
+
+        if (countdown <= 0) {
+          clearInterval(interval);
+          countdownElement.style.display = 'none';
+          captureAndUploadPhoto();
+        }
+      }, 1000);
+    }
+
+    function captureAndUploadPhoto() {
+      const videoElement = document.getElementById('videoElement');
+      const canvas = document.getElementById('canvas');
+      const context = canvas.getContext('2d');
+
+      context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+
+      const imageData = canvas.toDataURL('image/png');
+      uploadPhoto(imageData);
+    }
+
+    async function uploadPhoto(imageData) {
+      const formData = new FormData();
+      formData.append('image', imageData);
+      formData.append('imageName', `Fotobox_${Date.now()}.png`);
+
+      try {
+        const response = await fetch('save_image.php', {
+          method: 'POST',
+          body: formData,
+        });
+
+        if (!response.ok) {
+          throw new Error(`Server Error: ${response.statusText}`);
+        }
+
+        console.log('Foto erfolgreich hochgeladen');
+      } catch (error) {
+        console.error('Fehler beim Hochladen des Bildes:', error);
+      }
+    }
+
+    function init() {
+      document.getElementById('captureButton').addEventListener('click', startCountdownAndCapture);
+      startCamera();
+    }
+
+    init();
+  </script>
+</body>
+</html>

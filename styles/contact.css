@@ -1,0 +1,64 @@
+/* Start: Dokumenteinstellung */
+
+body {
+    font-family: Arial, sans-serif; /*Arial oder wenn Arial nicht verfügbar san serif*/
+    margin: 0;
+    padding: 0;
+}
+
+/* Ende: Dokumenteinstellung */
+
+
+
+}
+.contact-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+.contact-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+.contact-form label {
+    font-size: 14px;
+    display: block;
+    margin-bottom: 5px;
+}
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2d0879;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.contact-form button:hover {
+    background-color: #002f5c;
+}
+/* Honeypot hidden field (Spam Protection) */
+.honeypot {
+    display: none;
+}
+#Kontaktformular{
+
+padding-top: 30px;
+color: #2d0879;
+font-size: 40px;
+text-align: center;
+
+
+}

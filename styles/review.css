@@ -1,0 +1,196 @@
+/* ===================================
+   Start: Dokumenteinstellung
+   =================================== */
+
+body {
+    font-family: Arial, sans-serif; /* Arial oder sans-serif als Fallback */
+    margin: 0;
+    padding: 0;
+}
+
+/* ===================================
+   Ende: Dokumenteinstellung
+   =================================== */
+
+
+/* ===================================
+   Start: Quiz-Auswahlbereich
+   =================================== */
+
+.quiz-selection {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Leichter Schatten für Tiefe */
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+    box-sizing: border-box;
+    position: absolute; /* Positioniert das Element relativ zum Viewport */
+    top: 300px; /* 300px Abstand vom oberen Rand */
+    left: 50%; /* Horizontal zentriert */
+    transform: translateX(-50%); /* Perfekte Zentrierung */
+    text-align: center;
+}
+
+/* ===================================
+   Ende: Quiz-Auswahlbereich
+   =================================== */
+
+
+/* ===================================
+   Start: Quiz-Container
+   =================================== */
+
+.quiz-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Leicht verstärkter Schatten */
+    padding: 20px 40px;
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Stil für die Quiz-Überschrift */
+#ueberschriftquizbereich {
+    font-size: 55px;
+    color: #2d0879; /* Dunkles Violett passend zur Website */
+    margin-bottom: 20px;
+}
+
+/* ===================================
+   Ende: Quiz-Container
+   =================================== */
+
+
+/* ===================================
+   Start: Typografie
+   =================================== */
+
+/* Stil für die Hauptüberschrift */
+h1 {
+    margin-bottom: 20px;
+    color: #2d0879; /* Konsistente Farbe für Hauptüberschrift */
+}
+
+/* Stil für die Quizfrage-Anzeige */
+#question {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* ===================================
+   Ende: Typografie
+   =================================== */
+
+
+/* ===================================
+   Start: Allgemeine Klassen
+   =================================== */
+
+/* Versteckt Elemente */
+.hide {
+    display: none;
+}
+
+/* ===================================
+   Ende: Allgemeine Klassen
+   =================================== */
+
+
+/* ===================================
+   Start: Buttons
+   =================================== */
+
+/* Grundlegender Stil für alle Buttons */
+.btn, .start-btn {
+    background-color: #2d0879;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1,5em;
+    transition: background-color 0.3s ease; /* Weicher Übergang bei Hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+}
+
+/* Hover-Effekt für alle Buttons */
+.btn:hover, .start-btn:hover, .back-btn:hover {
+    background-color: #0056b3; /* Leicht veränderte Farbe bei Hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Verstärkter Schatten */
+}
+
+/* Stil für den Nächste-Frage-Button */
+.next-btn {
+    background-color: #28a745; /* Grün für den Nächste-Frage-Button */
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.btn, .back-btn {
+    background-color: #2d0879;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1,5em;
+    transition: background-color 0.3s ease; /* Weicher Übergang bei Hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+}
+
+/* Hover-Effekt für den Nächste-Frage-Button */
+.next-btn:hover {
+    background-color: #218838; /* Dunkleres Grün beim Hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Stil für den Neustart-Button */
+#restart-btn {
+    background-color: #ff4d4d; /* Rote Farbe für den Neustart-Button */
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover-Effekt für den Neustart-Button */
+#restart-btn:hover {
+    background-color: #e60000; /* Dunkleres Rot beim Hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ===================================
+   Ende: Buttons
+   =================================== */
+
+
+/* ===================================
+   Start: Button-Container
+   =================================== */
+
+.btn-container {
+    display: flex;
+    flex-direction: column; /* Vertikale Anordnung der Buttons */
+    gap: 10px; /* Abstand zwischen den Buttons */
+}
+
+/* ===================================
+   Ende: Button-Container
+   =================================== */

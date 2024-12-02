@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Verlinkung zu den CSS-Dateien -->
+    <link rel="stylesheet" type="text/css" href="../styles/main.css">
+    <link rel="stylesheet" type="text/css" href="../styles/review.css">
+
+    <!-- Verlinkung zu JavaScript-Datei -->
+    <script src="../scripts/review.js" defer></script>
+
+    <title>Quizbereich - Review.Papiertechnik.at</title>
+</head>
+<body>
+    <!-- Quiz Auswahl -->
+    <section class="quiz-selection" id="quiz-selection">
+        <h2>Quizbereich</h2>
+        <div class="selection-item">
+            <p>Holzkunde</p>
+            <button class="start-quiz-btn" onclick="openQuiz('quiz1')">Holz als Rohstoff</button>
+
+        </div>
+        <div class="selection-item">
+            <p>Zellstoffherstellung</p>
+            <button class="start-quiz-btn" onclick="openQuiz('quiz2')">Starte Quiz 2</button>
+        </div>
+        <div class="selection-item">
+            <p>Stoffaufbereitung</p>
+            <button class="start-quiz-btn" onclick="openQuiz('quiz3')">Starte Quiz 3</button>
+        </div>
+        <div class="selection-item">
+            <p>Konstantteil PM</p>
+            <button class="start-quiz-btn" onclick="openQuiz('quiz4')">Starte Quiz 4</button>
+        </div>
+    </section>
+
+    <!-- Quiz Container -->
+    <section class="quiz-container hide" id="quiz-container">
+        <div id="start-container">
+            <h1> Hier beginnt das Quiz über Holz als Rohstoff</h1>
+            <button id="start-btn" class="start-btn">Starte Quiz</button>
+
+        </div>
+        <div id="question-container" class="hide">
+            <h2 id="question">Hier kommt die Frage</h2>
+            <div id="answer-buttons" class="btn-container"></div>
+        </div>
+        <button id="next-btn" class="next-btn hide">Nächste Frage</button>
+        <button id="restart-btn" class="btn hide">Quiz neu starten</button>
+        <button id="zurueck-btn" class="back-btn" onclick="window.location.href='../pages/quizbereich.html'">Zur Startseite</button>
+        <button id="back-to-selection-btn" class="btn hide">Zurück zur Auswahl</button>
+    </section>
+</body>
+</html>

@@ -1,0 +1,201 @@
+/* ===================================
+   Start: Dokumenteinstellungen
+   =================================== */
+
+body {
+    font-family: Arial, sans-serif; /* Arial-Schriftart oder Standard sans-serif */
+    margin: 0;
+    padding: 0;
+}
+
+
+   .map-container {
+       position: sticky;
+       width: 100%;
+       max-width: 1200px; /* Begrenzung der Breite für größere Bildschirme */
+       margin: auto; /* Zentriert den Container horizontal */
+       margin-top: 190px;
+   }
+
+   .map-image {
+       width: 100%;
+       height: auto;
+       z-index: 0; /* Hintergrundbild */
+
+   }
+
+   .pin {
+       position: absolute;
+       z-index: 2; /* Vor dem Hintergrundbild */
+       display: flex; /* Um das Tooltip unter der Stecknadel anzuzeigen */
+       flex-direction: column; /* Tooltip unter der Stecknadel */
+       align-items: center; /* Zentriert Tooltip */
+       transition: transform 0.3s; /* Weiche Übergang für die Skalierung */
+   }
+
+   .pin-icon {
+       width: 48px; /* Größe der Stecknadel (hier größer eingestellt) */
+       height: 48px; /* Größe der Stecknadel (hier größer eingestellt) */
+       filter: invert(100%) brightness(200%); /* Invertierte und hellere Farben */
+   }
+
+   .tooltip {
+       visibility: hidden;
+       background-color: #333;
+       color: #fff;
+       text-align: center;
+       padding: 5px;
+       border-radius: 4px;
+       position: absolute;
+       bottom: 30px; /* Abstand unter der Stecknadel */
+       white-space: nowrap;
+       z-index: 1;
+       font-size: 12px;
+       opacity: 0;
+       transition: opacity 0.3s;
+   }
+
+   /* Tooltip sichtbar machen bei Hover */
+   .pin:hover .tooltip {
+       visibility: visible;
+       opacity: 1;
+   }
+
+   /* Hover-Effekt für die Pins */
+   .pin:hover {
+       transform: scale(1.2); /* Vergrößert die Stecknadel */
+       z-index: 3; /* Hebt die Stecknadel an, damit sie über dem Tooltip ist */
+}
+
+
+.tool-main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 25px;
+    padding: 0px;
+    max-width: 1800px;
+
+
+    margin-top: 50px;
+}
+
+.tool-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Sorgt für sauberen vertikalen Abstand */
+    align-items: center; /* Zentriert alles horizontal */
+    height: 100%;
+    width:250px;
+
+
+  }
+  .tool-card p{
+    color:black;
+    font-size:1em;
+
+  }
+  .tool-card h2{
+    color:black;
+    font-size:2em;
+
+  }
+    .tool-card:hover {
+transform: scale(1.05);
+}
+/* Sidebar Styles */
+
+
+
+
+   @media (max-width: 768px) {
+       .pin-icon {
+           width: 12px; /* Kleinere Breite für mobile Ansicht */
+           height: 12px; /* Kleinere Höhe für mobile Ansicht */
+           filter: invert(100%) brightness(200%); /* Helle Farben beibehalten */
+       }
+       .tool-main {
+          display: flex; /* Flexbox anstelle von Grid */
+          flex-direction: column; /* Karten untereinander anordnen */
+          align-items: center; /* Karten zentrieren */
+          gap: 20px; /* Abstand zwischen den Karten */
+          padding: 10px; /* Weniger Innenabstand */
+          margin-top: 20px; /* Reduzierter Abstand nach oben */
+      }
+
+      .tool-card {
+          width: 90%; /* Kartenbreite auf 90% des Containers begrenzen */
+          max-width: 400px; /* Maximale Breite der Karten */
+          padding: 15px; /* Weniger Innenabstand */
+          margin: 0 auto; /* Karten horizontal zentrieren */
+      }
+
+      .tool-card h2 {
+          font-size: 1.5em; /* Kleinere Schriftgröße für Überschriften */
+      }
+
+      .tool-card p {
+          font-size: 1em; /* Kleinere Schriftgröße für den Text */
+      }
+      .map-container {
+    margin-top: 100px; /* Weniger Abstand nach oben */
+    max-width: 100%; /* Breite der Karte füllt den Bildschirm */
+    padding: 0 10px; /* Seitenabstand für mobilen View */
+
+}
+.tooltip {
+    visibility: hidden;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 4px;
+    position: absolute;
+    bottom: 30px; /* Abstand unter der Stecknadel */
+    white-space: nowrap;
+    z-index: 1;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+      .map-container h2{
+      font-size:1em;
+
+      }
+
+.map-image {
+    width: 100%; /* Vollständig responsive */
+    height: auto; /* Beibehaltung des Seitenverhältnisses */
+}
+
+.pin {
+    transform: scale(0.8); /* Kleinere Stecknadeln */
+    z-index: 1; /* Z-Index bleibt sinnvoll gesetzt */
+}
+
+.pin-icon {
+    width: 24px; /* Halbiert die Breite für kleinere Bildschirme */
+    height: 24px; /* Halbiert die Höhe für kleinere Bildschirme */
+    filter: invert(100%) brightness(150%); /* Helle, aber nicht überstrahlende Farben */
+}
+
+.tooltip {
+    font-size: 10px; /* Kleinere Schriftgröße für die Tooltips */
+    bottom: 25px; /* Geringerer Abstand zur Stecknadel */
+    max-width: 80%; /* Verhindert übergroße Tooltips */
+    padding: 3px; /* Weniger Innenabstand */
+}
+
+.pin:hover {
+    transform: scale(1); /* Leicht reduzierter Hover-Effekt */
+}
+
+.pin:hover .tooltip {
+    font-size: 12px; /* Tooltips bei Hover etwas größer */
+}
+
+  }
