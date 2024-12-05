@@ -1,9 +1,12 @@
 /* Start: Dokumenteinstellung */
 
 body {
-    font-family: Arial, sans-serif; /*Arial oder wenn Arial nicht verfügbar san serif*/
     margin: 0;
     padding: 0;
+    font-family: "Yaldevi", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
 }
 
 /* Ende: Dokumenteinstellung */

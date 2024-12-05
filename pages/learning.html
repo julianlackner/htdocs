@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Yaldevi:wght@200..700&display=swap" rel="stylesheet">
 
     <!-- Start: Verlinkung zugehöriger Dateien
          =================================== -->
@@ -33,37 +35,48 @@
 
       <p id="Themengebiete">Learningcenter</p>
 
-    <section class="themenbibliothek">
 
-        <!-- Themengebiet Papiertechnik -->
-        <section id="papiertechnik" class="themengebiet-card">
-            <h2>Papiertechnik</h2>
-            <p>Entdecke die Welt der Papiertechnik. Angefangen von der Stoffaufbereitung bis zur Aufrollung und Verarbeitung.</p>
-            <a href="../pages/elearning-papiertechnik.html" id="button-papiertechnik">E-Learning Papiertechnik</a>
-        </section>
+      <div class="infotext">
+        <h2>Willkommen im Learning-Center <br> Hier können sie verschiedene Themengebiete wählen!</h2>
+        <p>Im Learning-Center haben Sie die Möglichkeit, interaktive Lernmodule zu absolvieren und Ihr neu erworbenes Wissen anschließend
+           im Quizbereich zu testen.Von Papiertechnik über Zellstofftechnik und Umwelttechnik bis hin zur Verfahrenstechnik bieten wir Ihnen eine Vielzahl
+           an interessanten und praxisnahen Inhalten. Alle Materialien wurden speziell entwickelt und basieren auf dem
+           fundierten Fachwissen eines Papiertechniker-Meisters</p>
+      </div>
 
-        <!-- Themengebiet Zellstofftechnik -->
-        <section id="zellstofftechnik" class="themengebiet-card">
-            <h2>Zellstofftechnik</h2>
-            <p>Vertiefe dein Wissen über die Herstellung von Zellstoff und seine Anwendungen.</p>
-            <a href="../pages/elearning-zellstofftechnik.html" id="button-zellstofftechnik">E-Learning Zellstofftechnik</a>
-        </section>
 
-        <!-- Themengebiet Umwelttechnik -->
-        <section id="umwelttechnik" class="themengebiet-card">
-            <h2>Umwelttechnik</h2>
-            <p>Vertiefen Sie Ihr Wissen über Umwelttechnik in der Welt der Papierindustrie.</p>
-            <a href="../pages/umwelttechnik1.html" id="button-umwelttechnik">E-Learning Umwelttechnik</a>
-        </section>
+    <section class="tool-main-learning">
 
-        <!-- Themengebiet Verfahrenstechnik -->
-        <section id="chemieverfahrenstechnik" class="themengebiet-card">
-            <h2>Verfahrenstechnik</h2>
-            <p>Vertiefen Sie Ihr Wissen über die Verfahrenstechnik in der Papier- und Zellstoff-Industrie.</p>
-            <a href="../pages/chemieverfahrenstechnik1.html" id="button-verfahrenstechnik">E-Learning Verfahrenstechnik</a>
-        </section>
+      <section class="tool-card-learning"onclick="location.href='../pages/elearning-papiertechnik.html'">
+          <h2>Papiertechnik</h2>
+          <p>Entdecke die Welt der Papiertechnik. Angefangen von der Stoffaufbereitung bis zur Aufrollung und Verarbeitung.</p>
+          <a href="pages/calculator.html" aria-label="zum calculator">
+              <img src="../images/icon_learning_jl.png" alt="calculator_icon" class="nav-image" id="papiertechnik"></a>
 
-    </section>
+      </section>
+
+      <section  class="tool-card-learning" onclick="location.href='../pages/elearning-zellstofftechnik.html'">
+          <h2>Zellstofftechnik</h2>
+          <p>Vertiefe dein Wissen über die Herstellung von Zellstoff und seine Anwendungen.</p>
+          <a href="pages/learning.html" aria-label="Zum Learningcenter">
+              <img src="../images/icon_learning_jl.png" alt="Learningcenter_icon" class="nav-image" id="zellstofftechnik"></a>
+      </section>
+
+      <section  class="tool-card-learning"onclick="location.href='../pages/elearning-umwelttechnik.html'">
+          <h2>Umwelttechnik</h2>
+          <p>Vertiefen Sie Ihr Wissen über Umwelttechnik in der Welt der Papierindustrie.</p>
+          <a href="pages/learning.html" aria-label="Zum Learningcenter">
+              <img src="../images/icon_learning_jl.png" alt="Learningcenter_icon" class="nav-image" id="umwelttechnik"></a>
+      </section>
+
+      <section  class="tool-card-learning" onclick:"href"onclick="location.href='../pages/elearning-verfahrenstechnik.html'">
+          <h2>Verfahrenstechnik</h2>
+          <p>Vertiefen Sie Ihr Wissen über die Verfahrenstechnik in der Papier- und Zellstoff-Industrie</p>
+          <a href="pages/quizbereich.html" aria-label="Quizbereich">
+              <img src="../images/icon_learning_jl.png" alt="Quizbereich_icon" class="nav-image" id="verfahrenstechnik"></a>
+      </section>
+
+  </section>
     <!-- ===================================
          Ende: Hauptinhalt - Themenbereiche
          =================================== -->

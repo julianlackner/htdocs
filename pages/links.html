@@ -4,130 +4,225 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Yaldevi:wght@200..700&display=swap" rel="stylesheet">
 
-    <!-- ===================================
-         Start: Verlinkung zugehöriger Dateien
-         =================================== -->
-    <link rel="stylesheet" type="text/css" href="../styles/review.css">
+    <!-- Verlinkung zu den CSS-Dateien -->
     <link rel="stylesheet" type="text/css" href="../styles/main.css">
-    <script src="../scripts/links.js"></script>
-    <!-- ===================================
-         Ende: Verlinkung zugehöriger Dateien
-         =================================== -->
+    <link rel="stylesheet" type="text/css" href="../styles/links.css">
+    <link rel="stylesheet" type="text/css" href="../styles/start.css">
+
+    <!-- Verlinkung zu JavaScript-Datei -->
+    <script src="../scripts/function_links.js"></script>
+    <script src="../scripts/function_main.js"></script>
+    <script src="../scripts/loadComponents.js" defer></script>
 
     <title>Links</title>
 </head>
 
 <body>
 
+<!--im sidebar.html und header.html ist der Code von dem Header gespeichert-->
+<main class ="main-content">
+    <!-- ===================================
+         Start: Hauptinhalt - Informationen zur Website
+         =================================== -->
+
+<div class="infotext">
+<h2>Unsere Empfehlungen für weiterführende Informationen</h2>
+<p>Suchen Sie spezifische Informationen rund um die Papiertechnik? Möchten Sie mehr über die österreichische
+  Papierindustrie erfahren oder interessieren Sie sich für Weiterbildungsmöglichkeiten in diesem Bereich?
+  Hier finden Sie unsere Empfehlungen für vertiefende Inhalte und spannende Einblicke.</p>
+</div>
+
+
+  <section class="tool-main-verlinkung">
+
+    <section class="tool-card-verlinkung" onclick="location.href='https://www.papiermacherschule.at/'">
+        <h2>Aus- und Weiterbildungen</h2>
+        <h3>Besuchen Sie die offizielle Website des ABZ Steyrermühls</h3>
+        <p>Hier finden Sie Informationen zur Meisterausbildung, zum Lehrabschluss in der Papiertechnik,
+           zu Terminen und Veranstaltungen sowie zu zusätzlichen Seminaren, Fortbildungen und vielem mehr</p>
+        <a href="https://www.papiermacherschule.at/" aria-label="Zur Papiermacherschule">
+            <img src="../images/icon_school_jl.png" alt="school_icon" class="nav-image"></a>
+
+    </section>
+
+    <section  class="tool-card-verlinkung"onclick="location.href='https://www.austropapier.at/'">
+        <h2>Austropapier</h2>
+        <h3>Besuchen Sie die offizielle Website der Austropapier</h3>
+        <p>Austropapier ist die Plattform der österreichischen Papierindustrie,
+          die 23 Unternehmen und fast 8.000 Mitarbeitende vertritt. Auf der Website austropapier.at
+          erfahren Sie mehr über die nachhaltigen Initiativen der Branche, wie den führenden Einsatz von
+           Altpapier (über 86 Prozent) und den hohen Anteil erneuerbarer Energien (68 Prozent). Zudem bietet
+           die Seite spannende Einblicke in aktuelle Entwicklungen, Innovationen und Themen rund um die Papierproduktion
+           in Österreich. Ein zentraler Ort für Fachleute, Interessierte und Umweltbewusste, die mehr über die Bedeutung
+            und Zukunft der Papierindustrie erfahren möchten.</p>
+        <a href="https://austropapier.at/" aria-label="Zum Learningcenter">
+            <img src="../images/icon_austropapier_jl.png" alt="Learningcenter_icon" class="nav-image"></a>
+    </section>
+
+    <section  class="tool-card-verlinkung" onclick="location.href='https://www.papiermachtschule.at/'">
+        <h2>Papier macht Schule</h2>
+        <h3>Besuchen Sie die offizielle Website von Papiermachtschule</h3>
+        <p>Papier macht Schule ist eine Bildungsinitiative der österreichischen Papierindustrie, die auf
+          der Website papiermachtschule.at spannende Lernangebote rund um das Thema Papier bereitstellt.
+           Hier können Schülerinnen, Schüler und Lehrkräfte mehr über die Herstellung, den nachhaltigen
+           Einsatz und die Recyclingmöglichkeiten von Papier erfahren. Die Plattform bietet interaktive
+           Lernmaterialien, Arbeitsblätter und Projekte, die den Alltag mit Papier greifbar machen und
+           Umweltbewusstsein fördern. Perfekt für Schulen und Bildungseinrichtungen, um das Wissen über
+           einen der wichtigsten Rohstoffe unserer Zeit praxisnah zu vermitteln.</p>
+        <a href="https://www.papiermachtschule.at/" aria-label="Quizbereich">
+            <img src="../images/icon_papiermachtschule_jl.png" alt="Quizbereich_icon" class="nav-image"></a>
+    </section>
+
+</section>
+
+
+<!--Start:Container-Karte mit Bild-->
+      <div class="map-container">
+
+          <h2> Verlinkung zu den Österreichischen Papierfabriken </h2>
+          <img src="../images/austria_2.png" alt="Landkarte" class="map-image">
+
+<!--Starte Code aller Oberösterreichischen Papierfabriken-->
+          <a href="https://www.smurfitkappa.com/de/locations/austria/nettingsdorf" target="_blank" class="pin" style="top: 28%; left: 60%;">
+              <img src="../images/icon_factory.png" alt="Stecknadel" class="pin-icon">
+              <span class="tooltip">Smurfit Westrock Nettingsdorf</span>
+          </a>
+
+          <a href="https://delfortgroup.com/de/location/dr-franz-feurstein/" target="_blank" class="pin" style="top: 22%; left: 60%;">
+              <img src="../images/icon_factory.png" alt="Stecknadel" class="pin-icon">
+              <span class="tooltip">Delfort Feurstein</span>
+          </a>
+
+          <a href="https://www.heinzelpaper.com/ueber-uns/unternehmen/" target="_blank" class="pin" style="top: 28%; left: 55%;">
+              <img src="../images/icon_factory.png" alt="Stecknadel" class="pin-icon">
+              <span class="tooltip">Heinzel Paper Steyrermühl</span>
+          </a>
+
+          <a href="https://www.heinzelpaper.com/ueber-uns/unternehmen/" target="_blank" class="pin" style="top: 34%; left: 55%;">
+              <img src="../images/icon_factory.png" alt="Stecknadel" class="pin-icon">
+              <span class="tooltip">Heinzel Paper Laakirchen</span>
+          </a>
+
+          <a href="https://www.lenzingpapier.com/" target="_blank" class="pin" style="top: 26%; left: 51%;">
+              <img src="../images/icon_factory.png" alt="Stecknadel" class="pin-icon">
+              <span class="tooltip">Lenzing Papier</span>
+          </a>
+
+          <a href="https://www.lenzing.com/de/" target="_blank" class="pin" style="top: 30%; left: 51%;">
+              <img src="../images/icon_factory.png" alt="Stecknadel" class="pin-icon">
+              <span class="tooltip">Lenzing Aktiengesellschaft</span>
+          </a>
+
+          <a href="https://www.merckens.at/impressum/" target="_blank" class="pin" style="top: 17%; left: 61%;">
+              <img src="../images/icon_factory.png" alt="Stecknadel" class="pin-icon">
+              <span class="tooltip">MERCKENS Karton- und Pappenfabrik</span>
+          </a>
+<!--Ende: Code aller Oberösterreichischen Papierfabriken-->
+
+<!--Starte Code aller Salzburger Papierfabriken-->
+
+          <a href="https://www.austrocel.com/" target="_blank" class="pin" style="top: 49%; left: 48%;">
+              <img src="../images/icon_factory.png" alt="Stecknadel" class="pin-icon">
+              <span class="tooltip">Austrocell Hallein</span>
+          </a>
+<!--Ende Code aller Salzburger Papierfabriken-->
+<!--Start Code aller Tiroler Papierfabriken-->
+          <a href="https://delfortgroup.com/de/location/papierfabrik-wattens-gmbh-co-kg/" target="_blank" class="pin" style="top: 60%; left: 24%;">
+              <img src="../images/icon_factory.png" alt="Stecknadel" class="pin-icon">
+              <span class="tooltip">Papierfabrik Wattens</span>
+          </a>
+<!--Ende Code aller Tiroler Papierfabriken-->
+<!--Start Code aller Vorarlberger Papierfabriken-->
+          <a href="https://www.rondo-ganahl.com/de" target="_blank" class="pin" style="top: 64%; left: 1%;">
+              <img src="../images/icon_factory.png" alt="Stecknadel" class="pin-icon">
+              <span class="tooltip">Rondo Ganahl</span>
+          </a>
+<!--Ende Code aller Vorarlberger Papierfabriken-->
+
+<!--Start Code aller Kärntner Papierfabriken-->
+          <a href="https://www.mondigroup.com/de/standorte/oesterreich/mondi-frantschach/" target="_blank" class="pin" style="top: 80%; left: 67%;">
+              <img src="../images/icon_factory.png" alt="Stecknadel" class="pin-icon">
+              <span class="tooltip">Mondi Frantschach</span>
+          </a>
+<!--Ende Code aller Kärntner Papierfabriken-->
+
+<!--Start Code aller Steyrer Papierfabriken-->
+
+          <a href="https://www.brigl-bergmeister.com/" target="_blank" class="pin" style="top: 60%; left: 71%;">
+              <img src="../images/icon_factory.png" alt="Stecknadel" class="pin-icon">
+              <span class="tooltip">Brigl & Bergmeister</span>
+          </a>
+          <a href="https://mm.group/de/standorte/mm-frohnleiten/" target="_blank" class="pin" style="top: 65%; left: 75%;">
+              <img src="../images/icon_factory.png" alt="Stecknadel" class="pin-icon">
+              <span class="tooltip">Mayr Melnhof Frohnleiten</span>
+          </a>
+
+          <a href="https://www.sappi.com/de/gratkorn-mill" target="_blank" class="pin" style="top: 72%; left: 75%;">
+              <img src="../images/icon_factory.png" alt="Stecknadel" class="pin-icon">
+              <span class="tooltip">Sappi Austria</span>
+          </a>
+
+          <a href="https://www.zellstoff-poels.at/" target="_blank" class="pin" style="top: 69%; left: 65%;">
+              <img src="../images/icon_factory.png" alt="Stecknadel" class="pin-icon">
+              <span class="tooltip">Zellstoff Pöls</span>
+          </a>
+
+
+
+          <a href="https://www.norskeskog.at/" target="_blank" class="pin" style="top: 61%; left: 67%;">
+              <img src="../images/icon_factory.png" alt="Stecknadel" class="pin-icon">
+              <span class="tooltip">Norske Skog Bruck</span>
+          </a>
+<!--Ende Code aller Steyrer Papierfabriken-->
+
+<!--Start Code aller Niederösterreichischen Papierfabriken-->
+          <a href="https://www.salzer.at/" target="_blank" class="pin" style="top: 28%; left: 75%;">
+              <img src="../images/icon_factory.png" alt="Stecknadel" class="pin-icon">
+              <span class="tooltip">Salzer Papier</span>
+          </a>
+
+          <a href="https://www.profuemed.com/" target="_blank" class="pin" style="top: 48%; left: 82%;">
+              <img src="../images/icon_factory.png" alt="Stecknadel" class="pin-icon">
+              <span class="tooltip">Profümed</span>
+          </a>
+
+          <a href="https://austropapier.at/mitglieder/poneder/" target="_blank" class="pin" style="top: 30%; left: 67%;">
+              <img src="../images/icon_factory.png" alt="Stecknadel" class="pin-icon">
+              <span class="tooltip">Poneder</span>
+          </a>
+
+
+          <a href="https://www.mondigroup.com/de/standorte/oesterreich/mondi-neusiedler/" target="_blank" class="pin" style="top: 33%; left: 67%;">
+              <img src="../images/icon_factory.png" alt="Stecknadel" class="pin-icon">
+              <span class="tooltip">Mondi Neusiedler Hausmening</span>
+          </a>
+
+          <a href="https://www.mondigroup.com/de/standorte/oesterreich/mondi-neusiedler/" target="_blank" class="pin" style="top: 37%; left: 67%;">
+              <img src="../images/icon_factory.png" alt="Stecknadel" class="pin-icon">
+              <span class="tooltip">Mondi Neusiedler Kematen a.d.Y.</span>
+          </a>
+
+
+          <a href="https://www.essity.com/" target="_blank" class="pin" style="top: 42%; left: 81%;">
+              <img src="../images/icon_factory.png" alt="Stecknadel" class="pin-icon">
+              <span class="tooltip">Essity Austria</span>
+          </a>
+
+          <a href="https://www.hamburger-containerboard.com/" target="_blank" class="pin" style="top: 45%; left: 84%;">
+              <img src="../images/icon_factory.png" alt="Stecknadel" class="pin-icon">
+              <span class="tooltip">Hamburger Containerboard</span>
+          </a>
+          <h3>stand 01/25<h3>
+      </div> <!--Ende Container Karte-->
+
+
   <!-- ===================================
        Start: Header-Bereich
        =================================== -->
 
-  <header class="top-bar">
-
-    <!-- Start: Überschriften im Balken -->
-    <h2 class= "site-title">Überprüfen</h2>
-    <h1 class= "main-title">Papiertechnik.at</h1>
-    <!--Ende: Überschriften im Balken -->
-
-
-  <!--Start: Navigation-Icons -->
-  <nav class="icon-container" aria-label="Hauptnavigation">
-
-      <!-- Link zur Hauptseite -->
-      <a href="../index.html" aria-label="Zur Startseite">
-          <img src="../images/icon_factory.png" alt="Start" class="nav-image">
-      </a>
-
-      <!-- Link zur Lernseite -->
-      <a href="../pages/learning.html" aria-label="Zur Lernseite">
-          <img src="../images/icon_books.png" alt="Lernen" class="nav-image">
-      </a>
-
-      <!-- Link zur Quizseite -->
-      <a href="../pages/review.html" aria-label="Zur Quizseite">
-          <img src="../images/icon_quiz.png" alt="Quiz" class="nav-image">
-      </a>
-
-      <!-- Link zur Kontaktseite -->
-      <a href="../pages/contact.html" aria-label="Zur Kontaktseite">
-          <img src="../images/icon_email.png" alt="Kontakt" class="nav-image">
-      </a>
-
-  </nav>
-  <!--Ende: Navigation-Icons  -->
-
-
-  <!--Star: Hauptbild mit Navigationsfeld -->
-      <img src="../images/papiertechnik_logo_4.jpg" alt="Papiertechnik Übersicht" usemap="#papiertechnik-map" class="image-map">
-
-      <map name="papiertechnik-map">
-          <area shape="rect" coords="0,0,600,400" href="../pages/learning.html" alt="Learning" title="Learning"><!--Link zu E-Learning ZF-->
-          <area shape="rect" coords="600,0,850,400" href="../pages/contact.html" alt="Contact" title="Contact"><!--Link zu E-Learning PAT-->
-          <area shape="rect" coords="850,0,1370,400" href="../pages/review.html" alt="Review" title="Review"><!--Link zu E-Learning Ausr.-->
-      </map>
-  <!-- Ende: Hauptbild mit Navigationsbereich-->
-
-
-  <!-- ===================================
-       Ende: Header-Bereich
-       =================================== -->
-
-
-    </header>
-
-    <main class = "main-content">
-
-
-
-      <!--Haupt-Content-->
-
-
-
-    </main>
-    <!-- ===================================
-         Start: Footer
-         =================================== -->
-    <footer class="footer" aria-labelledby="footer-heading">
-        <h2 id="footer-heading" class="visually-hidden">Footer-Informationen</h2>
-
-        <div class="footer-content">
-
-            <!-- Über Uns -->
-            <div class="footer-section about" aria-labelledby="about-heading">
-                <h3 id="about-heading">Über Uns</h3>
-                <p>Papiertechnik.at ist Ihre Quelle für Wissen über Zellstoff- und Papiertechnik.</p>
-            </div>
-
-            <!-- Links -->
-            <div class="footer-section links" aria-labelledby="links-heading">
-                <h3 id="links-heading">Links</h3>
-                <ul>
-                    <li><a href="../index.html">Startseite</a></li>
-                    <li><a href="../pages/learning.html">Lernen</a></li>
-                    <li><a href="../pages/review.html">Quiz</a></li>
-                    <li><a href="../pages/contact.html">Kontakt</a></li>
-                </ul>
-            </div>
-
-            <!-- Kontakt-Info und Social Media -->
-            <div class="footer-section contact-info" aria-labelledby="contact-heading">
-                <h3 id="contact-heading">Kontakt</h3>
-                <p>Email: info@papiertechnik.at</p>
-                <p>Telefon: +43 650 919 40 77</p>
-
-                <h3>Social Media</h3>
-                <a class="social-media" href="https://facebook.com" target="_blank" aria-label="Facebook">Facebook</a>
-                <a class="social-media" href="https://instagram.com" target="_blank" aria-label="Instagram">Instagram</a>
-                <a class="social-media" href="https://linkedin.com" target="_blank" aria-label="LinkedIn">LinkedIn</a>
-            </div>
-
-        </div>
-        <div class="footer-bottom">
-            &copy; 2024 Papiertechnik.at | Alle Rechte vorbehalten
-        </div>
-    </footer>
     <!-- ===================================
          Ende: Footer
          =================================== -->

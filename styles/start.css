@@ -3,9 +3,12 @@
    =================================== */
 
 body {
-    font-family: Arial, sans-serif; /* Arial-Schriftart oder Standard sans-serif */
     margin: 0;
     padding: 0;
+    font-family: "Yaldevi", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
 }
 
 
@@ -68,46 +71,6 @@ body {
 }
 
 
-.tool-main {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 25px;
-    padding: 0px;
-    max-width: 1800px;
-
-
-    margin-top: 50px;
-}
-
-.tool-card {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Sorgt für sauberen vertikalen Abstand */
-    align-items: center; /* Zentriert alles horizontal */
-    height: 100%;
-    width:250px;
-
-
-  }
-  .tool-card p{
-    color:black;
-    font-size:1em;
-
-  }
-  .tool-card h2{
-    color:black;
-    font-size:2em;
-
-  }
-    .tool-card:hover {
-transform: scale(1.05);
-}
-/* Sidebar Styles */
 
 
 
@@ -119,19 +82,22 @@ transform: scale(1.05);
            filter: invert(100%) brightness(200%); /* Helle Farben beibehalten */
        }
        .tool-main {
-          display: flex; /* Flexbox anstelle von Grid */
-          flex-direction: column; /* Karten untereinander anordnen */
-          align-items: center; /* Karten zentrieren */
-          gap: 20px; /* Abstand zwischen den Karten */
-          padding: 10px; /* Weniger Innenabstand */
-          margin-top: 20px; /* Reduzierter Abstand nach oben */
-      }
+         display: flex; /* Flexbox für zentrierte Ausrichtung */
+         flex-direction: column; /* Karten untereinander anordnen */
+         align-items: center; /* Zentrierung horizontal */
+         gap: 20px; /* Abstand zwischen den Karten */
+         padding: 15px; /* Innenabstand des Containers */
+       }
 
       .tool-card {
-          width: 90%; /* Kartenbreite auf 90% des Containers begrenzen */
-          max-width: 400px; /* Maximale Breite der Karten */
-          padding: 15px; /* Weniger Innenabstand */
-          margin: 0 auto; /* Karten horizontal zentrieren */
+        display: flex; /* Flexbox für innere Zentrierung */
+        flex-direction: column; /* Elemente von oben nach unten anordnen */
+        justify-content: center; /* Zentriert die Inhalte vertikal */
+        align-items: center; /* Zentriert die Inhalte horizontal */
+        width: 90%; /* Karte nimmt die volle Breite ein */
+        max-width: 400px; /* Optional: Begrenzung der Kartenbreite */
+        padding: 15px; /* Innenabstand der Karte */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Dezenter Schatten */
       }
 
       .tool-card h2 {

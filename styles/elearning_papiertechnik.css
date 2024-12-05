@@ -1,3 +1,15 @@
+body{
+
+
+  font-family: "Yaldevi", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+
+
 #ueberschrift_lernmodul {
       font-size: 3rem;
       color: white;

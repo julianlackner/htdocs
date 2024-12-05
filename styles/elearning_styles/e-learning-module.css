@@ -4,6 +4,10 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden; /* Verhindert unnötiges Scrollen */
+    font-family: "Yaldevi", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
 }
 
 

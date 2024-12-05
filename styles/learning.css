@@ -2,9 +2,135 @@
 /* Start: Dokumenteinstellung */
 
 body {
-    font-family: Arial, sans-serif; /*Arial oder wenn Arial nicht verfügbar san serif*/
+
+    font-family: "Yaldevi", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
     margin: 0;
     padding: 0;
 }
 
 /* Ende: Dokumenteinstellung */
+
+#papiertechnik{
+ filter: invert(20%) sepia(82%) saturate(5293%) hue-rotate(210deg) brightness(90%) contrast(105%);
+}
+#zellstofftechnik{
+
+ filter: invert(84%) sepia(87%) saturate(511%) hue-rotate(1deg) brightness(102%) contrast(101%);
+}
+
+#umwelttechnik{
+filter: invert(42%) sepia(91%) saturate(3828%) hue-rotate(120deg) brightness(90%) contrast(95%);}
+
+#verfahrenstechnik{
+   filter: invert(16%) sepia(95%) saturate(7484%) hue-rotate(0deg) brightness(90%) contrast(105%);
+}
+
+.tool-card-learning {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Sorgt für sauberen vertikalen Abstand */
+    align-items: center; /* Zentriert alles horizontal */
+    height: 100%;
+    width:250px;
+
+
+  }
+  .tool-card-learning p{
+    color:black;
+    font-size:1em;
+
+  }
+  .tool-card-learning h2{
+    color:black;
+    font-size:2em;
+
+  }
+  .tool-card-learning h3{
+
+    color:black;
+    font-size:1,5em;
+  }
+    .tool-card-learning:hover{
+transform: scale(1.05);
+}
+/* Sidebar Styles */
+
+.tool-main-learning {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Passt die Größe an */
+    gap: 25px; /* Abstand zwischen den Cards */
+    justify-content: center; /* Zentriert die Cards */
+    padding: 20px; /* Abstand innerhalb des Containers */
+    max-width: 1200px; /* Begrenzung der Breite */
+    margin: 0 auto; /* Zentrierung des gesamten Grids */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .tool-main-learning {
+      display: flex; /* Flexbox für zentrierte Ausrichtung */
+      flex-direction: column; /* Karten untereinander anordnen */
+      align-items: center; /* Karten horizontal zentrieren */
+      justify-content: flex-start; /* Karten oben im Container ausrichten */
+      gap: 20px; /* Abstand zwischen den Karten */
+      padding: 20px; /* Innenabstand des Containers */
+      margin-top: 20px; /* Abstand zum oberen Textblock */
+      max-width: 100%; /* Container füllt die Breite aus */
+      box-sizing: border-box; /* Berücksichtigt Padding */
+  }
+
+  .tool-card-learning {
+      display: flex; /* Flexbox innerhalb der Karte */
+      flex-direction: column; /* Inhalte vertikal anordnen */
+      justify-content: center; /* Inhalte innerhalb der Karte vertikal zentrieren */
+      align-items: center; /* Inhalte innerhalb der Karte horizontal zentrieren */
+      background-color: white; /* Kartenhintergrund */
+      border-radius: 8px; /* Abgerundete Ecken */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Schatteneffekt */
+      width: 90%; /* Kartenbreite (responsive) */
+      max-width: 400px; /* Maximale Kartenbreite */
+      padding: 20px; /* Innenabstand der Karte */
+      margin: 10px 0; /* Abstand zwischen den Karten */
+      text-align: center; /* Zentrierter Text */
+  }
+
+
+  .tool-card-learning p,
+  .tool-card-learning h2,
+  .tool-card-learning h3 {
+    text-align: center; /* Zentrierter Text */
+  }
+
+  .tool-card-learning h2 {
+    font-size: 1.5em; /* Kleinere Überschrift */
+  }
+
+  .tool-card-learning h3 {
+    font-size: 1.2em; /* Kleinere Unterüberschrift */
+  }
+
+  .tool-card-learning p {
+    font-size: 0.9em; /* Kleinere Schriftgröße für Absätze */
+  }
+}

@@ -1,0 +1,99 @@
+body{
+  font-family: "Yaldevi", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+
+
+}
+
+
+.infotext_links h3{
+
+position: center;
+
+
+}
+
+.tool-main-verlinkung {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Passt die Größe an */
+    gap: 90px; /* Abstand zwischen den Cards */
+    justify-content: center; /* Zentriert die Cards */
+    padding: 20px; /* Abstand innerhalb des Containers */
+    max-width: 1200px; /* Begrenzung der Breite */
+    margin: 0 auto; /* Zentrierung des gesamten Grids */
+}
+
+
+.tool-card-verlinkung {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 0px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Sorgt für sauberen vertikalen Abstand */
+    align-items: center; /* Zentriert alles horizontal */
+    height: 100%;
+    width:350px;
+
+
+  }
+  .tool-card-verlinkung p{
+    color:black;
+    font-size:1em;
+
+  }
+  .tool-card-verlinkung h2{
+    color:black;
+    font-size:2em;
+
+  }
+  .tool-card-verlinkung h3{
+
+    color:black;
+    font-size:1,5em;
+  }
+    .tool-card-verlinkung:hover {
+transform: scale(1.05);
+}
+@media (max-width: 768px) {
+  .tool-main-verlinkung {
+    display: flex; /* Flexbox für zentrierte Ausrichtung */
+    flex-direction: column; /* Karten untereinander anordnen */
+    align-items: center; /* Zentrierung horizontal */
+    gap: 20px; /* Abstand zwischen den Karten */
+    padding: 15px; /* Innenabstand des Containers */
+  }
+
+  .tool-card-verlinkung {
+    display: flex; /* Flexbox für innere Zentrierung */
+    flex-direction: column; /* Elemente von oben nach unten anordnen */
+    justify-content: center; /* Zentriert die Inhalte vertikal */
+    align-items: center; /* Zentriert die Inhalte horizontal */
+    width: 90%; /* Karte nimmt die volle Breite ein */
+    max-width: 400px; /* Optional: Begrenzung der Kartenbreite */
+    padding: 15px; /* Innenabstand der Karte */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Dezenter Schatten */
+  }
+
+  .tool-card-verlinkung p,
+  .tool-card-verlinkung h2,
+  .tool-card-verlinkung h3 {
+    text-align: center; /* Zentrierter Text */
+  }
+
+  .tool-card-verlinkung h2 {
+    font-size: 1.5em; /* Kleinere Überschrift */
+  }
+
+  .tool-card-verlinkung h3 {
+    font-size: 1.2em; /* Kleinere Unterüberschrift */
+  }
+
+  .tool-card-verlinkung p {
+    font-size: 0.9em; /* Kleinere Schriftgröße für Absätze */
+  }
+}

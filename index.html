@@ -5,19 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Yaldevi:wght@200..700&display=swap" rel="stylesheet">
+
     <!-- Verlinkung zu den CSS-Dateien -->
     <link rel="stylesheet" type="text/css" href="styles/main.css">
     <link rel="stylesheet" type="text/css" href="styles/start.css">
 
-    <!-- Verlinkung zu JavaScript-Datei -->
+    <!-- Verlinkung zu JavaScript-Dateien -->
     <script src="scripts/function_start.js"></script>
     <script src="scripts/function_main.js"></script>
     <script src="scripts/loadComponents.js" defer></script>
-
-    <title>Papiertechnik-Learnen</title>
-</head>
-
-<body>
 
 <!--im sidebar.html und header.html ist der Code von dem Header gespeichert-->
 <main class ="main-content">
@@ -25,17 +23,23 @@
          Start: Hauptinhalt - Informationen zur Website
          =================================== -->
 
+
+        <div class="container-facts">
+        <h1>Wusstest du...</h1>
+        <div id="fact-display" class="fact-display">Lade Fakten...</div>
+    </div>
+
 <div class="infotext">
   <h2>Willkommen auf Papiertechnik.at <br> Ihrer Plattform rund um die Welt der Papiertechnik!</h2>
   <p>Entdecken Sie eine Vielzahl an Funktionen, die speziell für die Bedürfnisse der Papierindustrie
     entwickelt wurden. Nutzen Sie unseren Papiertechnischen Taschenrechner, absolvieren Sie interaktive E-Learning-Module im Learningcenter, oder
     testen Sie Ihr Wissen im Quizbereich..</p>
-<div>
+</div>
 
 
   <section class="tool-main">
 
-    <section class="tool-card">
+    <section class="tool-card" onclick="location.href='../pages/calculator.html'">
         <h2>Papiertechnischer Taschenrechner</h2>
         <p>Für das Arbeiten in Papiertechnischen Laboren.</p>
         <a href="pages/calculator.html" aria-label="zum calculator">
@@ -43,14 +47,14 @@
 
     </section>
 
-    <section  class="tool-card">
+    <section  class="tool-card" onclick="location.href='../pages/learning.html'">>
         <h2>Learning-Center</h2>
         <p>Vertiefen Sie ihr Wissen im Learningcenter.</p>
         <a href="pages/learning.html" aria-label="Zum Learningcenter">
             <img src="images/icon_learning_jl.png" alt="Learningcenter_icon" class="nav-image"></a>
     </section>
 
-    <section  class="tool-card">
+    <section  class="tool-card"onclick="location.href='../pages/quizbereich.html'">
         <h2>Quizbereich</h2>
         <p>Überprüfen Sie Ihr Wissen im Quizbereich</p>
         <a href="pages/quizbereich.html" aria-label="Quizbereich">
@@ -67,7 +71,7 @@
 <!--Start:Container-Karte mit Bild-->
       <div class="map-container">
 
-          <h2> Karte der Österreichische Papierindustrie </h2>
+          <h2> Karte der Österreichischen Papierindustrie </h2>
           <img src="images/austria_2.png" alt="Landkarte" class="map-image">
 
 <!--Starte Code aller Oberösterreichischen Papierfabriken-->
@@ -202,6 +206,7 @@
           </a>
       </div> <!--Ende Container Karte-->
 
+      <img src="../images/paper-timestrip_jl.png" alt="Papiertechnik Übersicht" class="image-map">
 
 
     <!-- ===================================
