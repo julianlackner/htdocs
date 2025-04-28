@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DuckDuckGo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <p>
+&lt;!DOCTYPE html&gt;<br>
+&lt;html lang="de"&gt;<br>
+&lt;head&gt;<br>
+&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
+&nbsp;&nbsp;&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br>
+&nbsp;&nbsp;&lt;title&gt;DuckDuckGo&lt;/title&gt;<br>
+&nbsp;&nbsp;&lt;link rel="stylesheet" href="styles.css"&gt;<br>
+&lt;/head&gt;<br>
+&lt;body&gt;<br>
+&nbsp;&nbsp;&lt;header class="top-bar"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="images/logo_1.svg" alt="DuckDuckGo Logo" class="logo"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" placeholder="Suchen, ohne getrackt zu werden" class="search-bar"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="top-right"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="hover-icon chat-container"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="images/logo_chat.png" alt="Chat Icon" class="icon-small"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="chat-text"&gt;Chat&lt;/span&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="hover-icon"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="images/logo_burger.png" alt="Menü Icon" class="icon-small"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+&nbsp;&nbsp;&lt;/header&gt;<br>
+<br>
+&nbsp;&nbsp;&lt;main class="main-section"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Zu DuckDuckGo&lt;br&gt; wechseln. Privat und &lt;br&gt;kostenlos!&lt;/h1&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="cta-boxes"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="box"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="images/logo_2.svg" alt="Suchmaschine Icon" class="icon"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;DuckDuckGo als deine Standardsuchmaschine festlegen.&lt;/p&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button&gt;Als Standardsuchmaschine festlegen&lt;/button&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="box"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="badge"&gt;BESTER DATENSCHUTZ&lt;/div&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="images/logo_3.svg" alt="Browser Icon" class="icon"&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Hol dir unseren kostenlosen Browser für noch mehr Privatsphäre.&lt;/p&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;button class="download"&gt;Browser herunterladen&lt;/button&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/div&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;p class="trust-msg"&gt;Millionen Menschen weltweit vertrauen uns!&lt;/p&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;div class="scroll-down"&gt;Mehr erfahren ↓&lt;/div&gt;<br>
+&nbsp;&nbsp;&lt;/main&gt;<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;
+</p>
+
+<pre><code>
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: linear-gradient(to bottom, #fff6e5, #ffffff);
+  text-align: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.logo {
+  height: 40px;
+}
+
+.search-bar {
+  flex-grow: 1;
+  max-width: 500px;
+  margin: 0 20px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.top-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.hover-icon {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.hover-icon:hover {
+  background-color: #e5e5e5;
+}
+
+.icon-small {
+  height: 24px;
+  width: 24px;
+}
+
+.chat-text {
+  font-size: 14px;
+  color: #000;
+}
+
+.main-section h1 {
+  font-size: 3.2em;
+  font-weight: bold;
+  margin: 50px 0 30px;
+}
+
+.cta-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.box {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  width: 280px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.icon {
+  height: 50px;
+  margin-bottom: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.badge {
+  background: green;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #ccc;
+  cursor: pointer;
+}
+
+.download {
+  background: #4c6ef5;
+  color: white;
+}
+
+.trust-msg {
+  margin-top: 30px;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.scroll-down {
+  margin-top: 40px;
+  font-weight: bold;
+}
+
+/* Bis zu 800px – Tablet-Ansicht */
+@media (max-width: 800px) {
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .search-bar {
+    width: 100%;
+    max-width: none;
+    margin: 10px 0;
+  }
+
+  .cta-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: nowrap;
+  }
+
+  .box {
+    width: 280px;
+  }
+}
+
+@media (max-width: 608px) {
+  .cta-boxes {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .box {
+    width: 90%;
+    max-width: 300px;
+    padding: 15px;
+  }
+
+  .main-section h1 {
+    font-size: 1.4em;
+    margin: 30px 0 20px;
+  }
+
+  .icon {
+    height: 40px;
+  }
+
+  .logo {
+    height: 30px;
+  }
+
+  .search-bar {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .chat-text {
+    font-size: 12px;
+  }
+
+  .trust-msg {
+    font-size: 0.8em;
+  }
+
+  .badge {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+</code></pre>
+
+
+</body>
+</html>
