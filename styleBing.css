@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.background {
+    background-image: url('images/background.webp');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(255, 255, 255, 0.0); /* transparent */
+}
+
+.logo {
+    height: 30px;
+}
+
+.nav-links a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.user-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-area a, .user-area span {
+    color: white;
+    font-size: 14px;
+}
+
+.user-icon, .trophy-icon, .phone-icon, .menu-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.search-area {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-box {
+    background: white;
+    border-radius: 50px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    width: 60%;
+    max-width: 800px;
+}
+
+.search-box input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    font-size: 18px;
+}
+
+.search-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.search-icons img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}

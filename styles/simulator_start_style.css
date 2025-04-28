@@ -1,0 +1,141 @@
+.icon-list-sim {
+  list-style: none; /* Entfernt die Standard-Auflistungssymbole */
+  padding: 0;
+}
+
+.icon-list-sim li {
+  position: relative;
+  margin-bottom: 20px; /* Abstand zwischen Listenelementen */
+  padding-left: 40px; /* Platz für das Icon */
+}
+
+.icon-list-sim li::before {
+  content: url('icon.png'); /* Bild-URL für das Icon */
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px; /* Größe des Icons */
+  height: 20px;
+}
+.infotext-sim {
+
+    color: white; /* Textfarbe für gute Lesbarkeit */
+    padding: 20px;
+    margin: auto;
+    max-width: 900px; /* Breite des Containers */
+    text-align: center; /* Text ausrichten für sauberes Layout */
+}
+
+.infotext-sim h2 {
+    font-size: 1.8rem; /* Größere Schriftgröße für die Überschrift */
+    margin-bottom: 15px;
+    color: #f7f7f7; /* Helle Farbe für die Überschrift */
+    text-align: center; /* Zentrierte Überschrift */
+}
+.infotext-sim h1 {
+    font-size: 1.8rem; /* Größere Schriftgröße für die Überschrift */
+    margin-bottom: 15px;
+    color: #f7f7f7; /* Helle Farbe für die Überschrift */
+    text-align: center; /* Zentrierte Überschrift */
+}
+
+.infotext-sim p {
+    font-size: 1rem; /* Standard-Schriftgröße */
+    line-height: 1.6; /* Zeilenhöhe für bessere Lesbarkeit */
+    margin: 0;
+    color: #ffffff; /* Helle Farbe für den Text */
+    text-align: center;
+}
+#hinweis{
+
+  color:red;
+}
+#hinweistext{
+
+  color:red;
+  font-weight: bold;
+  font-size: 1,5em;
+}
+#important-sim h2{
+
+color:red;
+
+}
+.image-gallery {
+    display: flex;               /* Flexbox für Layout */
+    flex-direction: column;      /* Elemente untereinander anordnen */
+    align-items: center;         /* Bilder horizontal zentrieren */
+    gap: 20px;                   /* Abstand zwischen den Bildern */
+    padding: 20px;               /* Abstand innen */
+}
+
+/* Stil für jedes Bild */
+.screen-image {
+    width: 900px;                /* Maximale Breite der Bilder */
+    height: auto;                /* Automatische Höhe, um das Seitenverhältnis zu wahren */
+    object-fit: contain;         /* Bild skalieren, ohne das Seitenverhältnis zu verzerren */
+    border: 2px solid #ccc;      /* Optional: Grauer Rahmen */
+    border-radius: 8px;          /* Optional: Abgerundete Ecken */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Schatteneffekt */
+}
+
+
+/* Video-Container */
+.video-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;          /* Zentrieren */
+    gap: 20px;                    /* Abstand zwischen Videos */
+    width: 100%;                  /* Breite auf 100% des verfügbaren Platzes */
+    margin: 20px auto;            /* Zentrierung nach außen */
+}
+
+/* Stil für das Video */
+.responsive-video {
+    width: 90vw;                  /* Breite: 90% der Viewport-Breite */
+    max-width: 1200px;            /* Maximale Breite */
+    height: auto;                 /* Höhe automatisch basierend auf Breite */
+    border: 2px solid #ccc;       /* Optionaler Rahmen */
+    border-radius: 8px;           /* Abgerundete Ecken */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Schatteneffekt */
+}
+
+@media (max-width: 768px) {
+
+  .image-gallery {
+      display: flex;               /* Flexbox für Layout */
+      flex-direction: column;      /* Elemente untereinander anordnen */
+      align-items: center;         /* Bilder horizontal zentrieren */
+      gap: 20px;                   /* Abstand zwischen den Bildern */
+      padding: 20px;               /* Abstand innen */
+  }
+
+  /* Stil für jedes Bild */
+  .screen-image {
+      width: 400px;                /* Maximale Breite der Bilder */
+      height: auto;                /* Automatische Höhe, um das Seitenverhältnis zu wahren */
+      object-fit: contain;         /* Bild skalieren, ohne das Seitenverhältnis zu verzerren */
+      border: 2px solid #ccc;      /* Optional: Grauer Rahmen */
+      border-radius: 8px;          /* Optional: Abgerundete Ecken */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Schatteneffekt */
+  }
+  /* Video-Container */
+  .video-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;          /* Zentrieren */
+      gap: 20px;                    /* Abstand zwischen Videos */
+      width: 100%;                  /* Breite auf 100% des verfügbaren Platzes */
+      margin: 20px auto;            /* Zentrierung nach außen */
+  }
+
+  /* Stil für das Video */
+  .responsive-video {
+      width: 400px;                  /* Breite: 90% der Viewport-Breite */
+      max-width: 1200px;            /* Maximale Breite */
+      height: auto;                 /* Höhe automatisch basierend auf Breite */
+      border: 2px solid #ccc;       /* Optionaler Rahmen */
+      border-radius: 8px;           /* Abgerundete Ecken */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Schatteneffekt */
+  }
+}

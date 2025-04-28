@@ -1,0 +1,187 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.menu-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 77px;
+    background-color: #007BFF;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.simulation-container {
+    position: relative;
+    margin: 20px;
+    border: 2px dashed #ccc;
+    height: 1500px;
+    background-color: light-grey;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.element {
+    position: absolute;
+    padding: 0px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: transparent;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
+.icon-container img {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+.pump-controls {
+    margin-top: 10px;
+}
+
+.pump-controls button {
+    margin: 5px 2px;
+    padding: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    background-color: #007BFF;
+    color: white;
+}
+
+.pump-controls button:hover {
+    background-color: #0056b3;
+}
+
+.pump-controls input[type="range"] {
+    width: 100%;
+}
+
+.modal {
+    position: fixed;
+    top: 30%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+.modal label {
+    display: block;
+    margin: 10px 0;
+}
+
+.modal input, .modal select {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.modal button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal button:hover {
+    background-color: #0056b3;
+}
+#lineSettings, #eraserSettings {
+margin-top: 10px;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+background: #f4f4f4;
+display: none;
+}
+#settings {
+margin-top: 10px;
+color:black;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+background: #f4f4f4;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+#symbolMenu div {
+width: 80px;
+text-align: center;
+
+
+
+  .resize-handle {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      cursor: pointer;
+      visibility: hidden;
+  }
+
+  .resize-handle.left {
+      left: -5px;
+      top: -4px;
+  }
+
+  .resize-handle.right {
+      right: -5px;
+      top: -4px;
+  }
+
+  .line {
+           cursor: pointer;
+       }
+
+       .line:hover {
+           outline: 5px solid rgba(0, 0, 255, 0.3);
+       }
+       .pump-controls {
+            margin-top: 10px;
+        }
+
+        .pump-controls button {
+            margin: 5px 2px;
+            padding: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            border-radius: 3px;
+            background-color: #007BFF;
+            color: white;
+        }
+
+        .pump-controls button:hover {
+            background-color: #0056b3;
+        }
+
+        .pump-controls input[type="range"] {
+            width: 100%;
+        }

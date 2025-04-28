@@ -7,7 +7,7 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Yaldevi:wght@200..700&display=swap" rel="stylesheet">
-
+    <title>Papiertechnik.at</title>
     <!-- Verlinkung zu den CSS-Dateien -->
     <link rel="stylesheet" type="text/css" href="styles/main.css">
     <link rel="stylesheet" type="text/css" href="styles/start.css">
@@ -15,8 +15,10 @@
     <!-- Verlinkung zu JavaScript-Dateien -->
     <script src="scripts/function_start.js"></script>
     <script src="scripts/function_main.js"></script>
-    <script src="scripts/loadComponents.js" defer></script>
+    <script src="loadcomponents.js" defer></script>
 
+</head>
+<body>
 <!--im sidebar.html und header.html ist der Code von dem Header gespeichert-->
 <main class ="main-content">
     <!-- ===================================
@@ -25,7 +27,7 @@
 
 
         <div class="container-facts">
-        <h1>Wusstest du...</h1>
+        <h1>Wussten Sie...</h1>
         <div id="fact-display" class="fact-display">Lade Fakten...</div>
     </div>
 
@@ -37,35 +39,48 @@
 </div>
 
 
-  <section class="tool-main">
+  <div class="tool-main">
 
     <section class="tool-card" onclick="location.href='../pages/calculator.html'">
         <h2>Papiertechnischer Taschenrechner</h2>
         <p>Für das Arbeiten in Papiertechnischen Laboren.</p>
         <a href="pages/calculator.html" aria-label="zum calculator">
-            <img src="images/icon_calculator.png" alt="calculator_icon" class="nav-image"></a>
+            <img src="images/icon_calculator.png" alt="calculator_icon" class="link-image"></a>
 
     </section>
 
-    <section  class="tool-card" onclick="location.href='../pages/learning.html'">>
+    <section  class="tool-card" onclick="location.href='../pages/learning.html'">
         <h2>Learning-Center</h2>
         <p>Vertiefen Sie ihr Wissen im Learningcenter.</p>
         <a href="pages/learning.html" aria-label="Zum Learningcenter">
-            <img src="images/icon_learning_jl.png" alt="Learningcenter_icon" class="nav-image"></a>
+            <img src="images/icon_learning_jl.png" alt="Learningcenter_icon" class="link-image"></a>
     </section>
 
-    <section  class="tool-card"onclick="location.href='../pages/quizbereich.html'">
+    <section  class="tool-card" onclick="location.href='../pages/quizbereich.html'">
         <h2>Quizbereich</h2>
         <p>Überprüfen Sie Ihr Wissen im Quizbereich</p>
         <a href="pages/quizbereich.html" aria-label="Quizbereich">
-            <img src="images/icon_quiz.png" alt="Quizbereich_icon" class="nav-image"></a>
+            <img src="images/icon_quiz.png" alt="Quizbereich_icon" class="link-image"></a>
     </section>
 
-</section>
-
+    <section  class="tool-card" onclick="location.href='../pages/simulator_start.html'">
+        <h2>Simulator</h2>
+        <p>Erstellen Sie im Simulator eine kleine Prozessanlage</p>
+        <a href="pages/simulator_start.html" aria-label="Simulator">
+            <img src="images/icon_sim.png" alt="Simulator_icon" class="link-image"></a>
+    </section>
+</div>
     <!-- ===================================
          Start: Karte aller Papierfabriken Östtereichs
          =================================== -->
+
+         <div class="website-aufbau">
+                <h1> Zur Allgemeinen Information!</h1>
+                <h2> Diese Website ist noch im Aufbau!</h2>
+                <h2> Viele Inhalte oder Formatierungen sind noch nicht fertig entwickelt und werden
+                     bis Anfang 2025 korrekt formatiert und zur Verfügung sein.</h2>
+                <img src="images/icon_construction.png" alt="constr." class="icon_construction">
+         </div>
 
 
 <!--Start:Container-Karte mit Bild-->
@@ -206,17 +221,9 @@
           </a>
       </div> <!--Ende Container Karte-->
 
-      <img src="../images/paper-timestrip_jl.png" alt="Papiertechnik Übersicht" class="image-map">
 
-
-    <!-- ===================================
-         Ende: Hauptinhalt - Informationen zur Website
-         =================================== -->
 </main>
 
-    <!-- ===================================
-         Ende: Footer
-         =================================== -->
 
 </body>
 </html>

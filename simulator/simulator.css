@@ -1,0 +1,14 @@
+.line {
+    position: absolute;
+    background-color: black;
+    cursor: move;
+}
+
+.resize-handle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: blue;
+    border-radius: 50%;
+    cursor: pointer;
+}

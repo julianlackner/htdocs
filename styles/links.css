@@ -56,7 +56,10 @@ position: center;
     color:black;
     font-size:1,5em;
   }
-    .tool-card-verlinkung:hover {
+
+
+
+.tool-card-verlinkung:hover {
 transform: scale(1.05);
 }
 @media (max-width: 768px) {

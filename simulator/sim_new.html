@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D Simulation</title>
+    <style>
+      body {
+          margin: 0;
+          font-family: Arial, sans-serif;
+      }
+
+      .toolbar {
+          background-color: #007bff;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          padding: 0 10px;
+      }
+
+      .icon {
+          width: 30px;
+          height: 30px;
+          margin-right: 10px;
+          cursor: pointer;
+      }
+
+      .menu {
+          position: absolute;
+          top: 60px;
+          left: 10px;
+          background-color: white;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          padding: 15px;
+          width: 300px;
+          z-index: 100;
+      }
+
+      .hidden {
+          display: none;
+      }
+
+      .menu h3 {
+          margin-top: 0;
+      }
+
+      .menu label {
+          display: block;
+          margin: 10px 0 5px;
+      }
+
+      .menu input,
+      .menu select {
+          width: 100%;
+          padding: 5px;
+          margin-bottom: 10px;
+          border: 1px solid #ccc;
+          border-radius: 3px;
+      }
+
+      .buttons {
+          display: flex;
+          justify-content: space-between;
+      }
+
+      .buttons button {
+          background-color: #007bff;
+          color: white;
+          border: none;
+          padding: 5px 10px;
+          border-radius: 3px;
+          cursor: pointer;
+      }
+
+      .buttons button:hover {
+          background-color: #0056b3;
+      }
+
+      .control-icons {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 10px;
+      }
+
+      .icon-small {
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+      }
+
+      .settings {
+          margin-top: 10px;
+      }
+
+      .output {
+          margin-top: 15px;
+          padding: 10px;
+          background-color: #f9f9f9;
+          border-radius: 5px;
+          border: 1px solid #ddd;
+      }
+
+      .lock-menu {
+          margin-top: 20px;
+      }
+
+      .lock-item {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+      }
+
+      .lock-item input {
+          margin-right: 10px;
+      }
+
+      .simulation-area {
+          background-color: #f0f0f0;
+          height: calc(100vh - 50px);
+          position: relative;
+      }
+
+      .simulation-element {
+          position: absolute;
+          text-align: center;
+          border-radius: 5px;
+          padding: 5px;
+          cursor: pointer;
+      }
+
+      .tank-element {
+          background-color: #007bff;
+          color: white;
+          width: 100px;
+          height: 50px;
+      }
+
+      .pump-element {
+          background-color: #ff4500;
+          color: white;
+          width: 120px;
+          height: 60px;
+      }
+
+      .simulation-element img {
+          max-width: 100%;
+          height: auto;
+      }
+    </style>
+</head>
+<body>
+    <div class="toolbar">
+        <img id="icon_add" class="icon" src="images/icon_symbol.png" alt="Add Icon">
+        <img id="icon_control_panel" class="icon" src="images/icon_control-panel.png" alt="Control Panel Icon">
+    </div>
+
+    <div class="simulation-area" id="simulation-area">
+        <!-- Simulationsobjekte werden hier dynamisch hinzugefügt -->
+    </div>
+
+    <div id="tank-menu" class="menu hidden">
+        <h3>Tank hinzufügen</h3>
+        <label for="tank-name">Tankname</label>
+        <input id="tank-name" type="text" placeholder="Tankname">
+        <label for="tank-capacity">Kapazität (m³)</label>
+        <input id="tank-capacity" type="number" placeholder="Kapazität">
+        <label for="tank-fill">Füllstand (m³)</label>
+        <input id="tank-fill" type="number" placeholder="Füllstand">
+        <label for="tank-min">Messung Min (%)</label>
+        <input id="tank-min" type="number" placeholder="Minimalwert">
+        <label for="tank-max">Messung Max (%)</label>
+        <input id="tank-max" type="number" placeholder="Maximalwert">
+        <div class="buttons">
+            <button id="add-tank">Tank hinzufügen</button>
+            <button id="cancel-tank">Abbrechen</button>
+        </div>
+    </div>
+
+    <div id="pump-menu" class="menu hidden">
+        <h3>Pumpe hinzufügen</h3>
+        <label for="pump-name">Pumpenname</label>
+        <input id="pump-name" type="text" placeholder="Pumpenname">
+        <label for="pump-source">Quelle</label>
+        <select id="pump-source"></select>
+        <label for="pump-target">Ziel</label>
+        <select id="pump-target"></select>
+        <label for="pump-capacity">Maximale Fördermenge (m³/h)</label>
+        <input id="pump-capacity" type="number" placeholder="Maximale Fördermenge">
+        <label for="pump-locks">Verriegelungen</label>
+        <div class="lock-menu">
+            <div class="lock-item">
+                <input type="checkbox" id="lock-volume-max">
+                <label for="lock-volume-max">Volumen Quelle Messung Max</label>
+            </div>
+            <div class="lock-item">
+                <input type="checkbox" id="lock-volume-min">
+                <label for="lock-volume-min">Volumen Ziel Messung Min</label>
+            </div>
+            <div class="lock-item">
+                <input type="checkbox" id="lock-pump-on">
+                <label for="lock-pump-on">Pumpe eingeschaltet</label>
+            </div>
+            <div class="lock-item">
+                <input type="checkbox" id="lock-water-ok">
+                <label for="lock-water-ok">Dichtwasser OK</label>
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="add-pump">Pumpe hinzufügen</button>
+            <button id="cancel-pump">Abbrechen</button>
+        </div>
+    </div>
+
+    <div id="control-panel" class="menu hidden">
+        <h3>Control Panel: <span id="control-panel-name"></span></h3>
+        <div class="control-icons">
+            <img id="lock-icon" class="icon-small" src="images/icon_lock.png" alt="Lock Icon">
+            <img id="list-icon" class="icon-small" src="images/icon_list.png" alt="List Icon">
+            <img id="gear-icon" class="icon-small" src="images/icon_gear.png" alt="Gear Icon">
+        </div>
+        <label for="pump-mode">Betriebsart</label>
+        <select id="pump-mode">
+            <option value="manual">Manuell</option>
+            <option value="automatic">Automatisch</option>
+        </select>
+        <div id="manual-settings" class="settings">
+            <label for="manual-output">Output (%)</label>
+            <input id="manual-output" type="number" placeholder="0-100">
+        </div>
+        <div id="automatic-settings" class="settings hidden">
+            <label for="automatic-setpoint">Sollwert (m³/h)</label>
+            <input id="automatic-setpoint" type="number" placeholder="Sollwert">
+        </div>
+        <div class="output">
+            <strong>Messwert:</strong> <span id="current-measurement">0 m³/h</span><br>
+            <strong>Output:</strong> <span id="current-output">0%</span>
+        </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+          const tanks = []; // Array für Tanks
+          const pumps = []; // Array für Pumpen
+          const locks = {}; // Verriegelungen pro Pumpe
+
+          let activePump = null; // Aktive Pumpe
+          let interval = null; // Simulation-Intervall
+
+          const simulationArea = document.getElementById("simulation-area");
+
+          const tankMenu = document.getElementById("tank-menu");
+          const pumpMenu = document.getElementById("pump-menu");
+
+          // Icon Event Listener
+          document.getElementById("icon_add").addEventListener("click", () => {
+              tankMenu.classList.toggle("hidden");
+          });
+
+          document.getElementById("icon_control_panel").addEventListener("click", () => {
+              pumpMenu.classList.toggle("hidden");
+          });
+
+          // ----------- HINZUFÜGEN VON TANKS ----------- //
+          document.getElementById("add-tank").addEventListener("click", () => {
+              const name = document.getElementById("tank-name").value;
+              const capacity = parseFloat(document.getElementById("tank-capacity").value);
+              const fill = parseFloat(document.getElementById("tank-fill").value);
+              const min = parseFloat(document.getElementById("tank-min").value);
+              const max = parseFloat(document.getElementById("tank-max").value);
+
+              if (!name || isNaN(capacity) || isNaN(fill) || capacity <= 0 || fill < 0 || fill > capacity) {
+                  alert("Bitte gültige Werte für den Tank eingeben!");
+                  return;
+              }
+
+              const tankElement = document.createElement("div");
+              tankElement.className = "simulation-element tank-element";
+              tankElement.style.left = `${Math.random() * 500}px`;
+              tankElement.style.top = `${Math.random() * 300}px`;
+
+              const tankImage = document.createElement("img");
+              tankImage.src = "images/tank.jpg";
+              tankImage.alt = "Tank";
+              tankElement.appendChild(tankImage);
+
+              const tankLabel = document.createElement("span");
+              tankLabel.textContent = name;
+              tankElement.appendChild(tankLabel);
+
+              simulationArea.appendChild(tankElement);
+
+              tanks.push({ name, capacity, fill, min, max });
+              updateDropdowns();
+          });
+
+          // ----------- HINZUFÜGEN VON PUMPEN ----------- //
+          document.getElementById("add-pump").addEventListener("click", () => {
+              const name = document.getElementById("pump-name").value;
+              const source = document.getElementById("pump-source").value;
+              const target = document.getElementById("pump-target").value;
+              const capacity = parseFloat(document.getElementById("pump-capacity").value);
+              const volumeMax = document.getElementById("lock-volume-max").checked;
+              const volumeMin = document.getElementById("lock-volume-min").checked;
+              const pumpOn = document.getElementById("lock-pump-on").checked;
+              const waterOk = document.getElementById("lock-water-ok").checked;
+
+              if (!name || source === target || isNaN(capacity) || capacity <= 0) {
+                  alert("Bitte gültige Werte für die Pumpe eingeben!");
+                  return;
+              }
+
+              const pumpElement = document.createElement("div");
+              pumpElement.className = "simulation-element pump-element";
+              pumpElement.style.left = `${Math.random() * 500}px`;
+              pumpElement.style.top = `${Math.random() * 300}px`;
+
+              const pumpImage = document.createElement("img");
+              pumpImage.src = "images/pump.jpg";
+              pumpImage.alt = "Pumpe";
+              pumpElement.appendChild(pumpImage);
+
+              const pumpLabel = document.createElement("span");
+              pumpLabel.textContent = name;
+              pumpElement.appendChild(pumpLabel);
+
+              simulationArea.appendChild(pumpElement);
+
+              locks[name] = { volumeMax, volumeMin, pumpOn, waterOk };
+              pumps.push({ name, source, target, capacity, output: 0, status: "stopped" });
+              updatePumpDropdown();
+          });
+
+          // ----------- START UND STOP DER PUMPE ----------- //
+          document.getElementById("start-pump").addEventListener("click", () => {
+              const pumpName = document.getElementById("active-pump").value;
+              activePump = pumps.find(p => p.name === pumpName);
+
+              if (!activePump) {
+                  alert("Bitte wählen Sie eine gültige Pumpe aus!");
+                  return;
+              }
+
+              activePump.status = "running";
+              startSimulation();
+          });
+
+          document.getElementById("stop-pump").addEventListener("click", () => {
+              if (activePump) {
+                  activePump.status = "stopped";
+                  stopSimulation();
+              }
+          });
+
+          // ----------- SIMULATION DER PUMPE ----------- //
+          function startSimulation() {
+              if (interval) return;
+
+              interval = setInterval(() => {
+                  if (!activePump || activePump.status !== "running") return;
+
+                  const sourceTank = tanks.find(t => t.name === activePump.source);
+                  const targetTank = tanks.find(t => t.name === activePump.target);
+
+                  if (!sourceTank || !targetTank) return;
+
+                  const maxFlow = activePump.capacity;
+                  const flowRate = (activePump.output / 100) * maxFlow;
+
+                  if (sourceTank.fill >= flowRate && targetTank.fill + flowRate <= targetTank.capacity) {
+                      sourceTank.fill -= flowRate;
+                      targetTank.fill += flowRate;
+                      console.log(
+                          `Quelle: ${sourceTank.name} (${sourceTank.fill.toFixed(2)} m³), Ziel: ${targetTank.name} (${targetTank.fill.toFixed(2)} m³)`
+                      );
+                  } else {
+                      stopSimulation();
+                      if (sourceTank.fill < flowRate) {
+                          alert(`Simulation gestoppt: Quelltank "${sourceTank.name}" ist leer!`);
+                      } else if (targetTank.fill + flowRate > targetTank.capacity) {
+                          alert(`Simulation gestoppt: Zieltank "${targetTank.name}" ist voll!`);
+                      }
+                  }
+              }, 1000);
+          }
+
+          function stopSimulation() {
+              clearInterval(interval);
+              interval = null;
+          }
+
+          // ----------- DROPDOWN-UPDATE ----------- //
+          function updateDropdowns() {
+              const sourceDropdown = document.getElementById("pump-source");
+              const targetDropdown = document.getElementById("pump-target");
+              sourceDropdown.innerHTML = "";
+              targetDropdown.innerHTML = "";
+
+              tanks.forEach((tank) => {
+                  const option = document.createElement("option");
+                  option.value = tank.name;
+                  option.textContent = tank.name;
+                  sourceDropdown.appendChild(option);
+
+                  const optionClone = option.cloneNode(true);
+                  targetDropdown.appendChild(optionClone);
+              });
+          }
+
+          function updatePumpDropdown() {
+              const pumpDropdown = document.getElementById("active-pump");
+              pumpDropdown.innerHTML = "";
+
+              pumps.forEach((pump) => {
+                  const option = document.createElement("option");
+                  option.value = pump.name;
+                  option.textContent = pump.name;
+                  pumpDropdown.appendChild(option);
+              });
+          }
+      });
+    </script>
+</body>
+</html>

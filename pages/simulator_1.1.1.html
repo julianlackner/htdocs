@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" type="text/css" href="sim_styles/style.css">
+
+
+    <!-- Verlinkung zur JavaScript-Datei -->
+
+
+    <!--script src="sim_scripts/sim_drawing.js"></script>-->
+    <script src="sim_scripts/sim_elementAdd.js" defer></script>
+    <script src="sim_scripts/main_2.js" defer></script>
+    <!--script src="sim_scripts/sim_controlElementAdd.js" defer></script>-->
+
+    <title>Fabrik-Simulation</title>
+
+</head>
+<body>
+
+    <h1>Anlagen Simulator</h1>
+
+    <div class="menu-bar">
+      <img src="images/icon_symbol.png"
+              alt="Symbol hinzufügen"
+              title="Symbol hinzufügen"
+              style="cursor: pointer; width: 30px; height: 30px;"
+              onclick="openSymbolMenu()"
+              role="button"
+              aria-label="Symbol hinzufügen">
+
+              <img src="images/icon_control.png"
+                      alt="Symbol hinzufügen"
+                      title="Symbol hinzufügen"
+                      style="cursor: pointer; width: 30px; height: 30px;"
+                      onclick="showModal()"
+                      role="button"
+                      aria-label="Steuerelement hinzufügen">
+
+                        <img src="images/icon_line.png" id="toggleDrawingTool" style="cursor: pointer; width: 30px; height: 30px;"alt="Zeichen-Tool starten" class="tool-button" title="Zeichen-Tool starten">
+                        <img src="images/icon_move.png" id="moveLinesMode"style="cursor: pointer; width: 30px; height: 30px;" alt="Linien verschieben" class="tool-button" title="Linien verschieben">
+                        <img src="images/icon_erase.png" id="eraseMode" style="cursor: pointer; width: 30px; height: 30px;"alt="Löschen-Modus" class="tool-button" title="Löschen-Modus">
+                        <img src="images/icon_delete.png"id="deleteSimulation" style="cursor: pointer; width: 30px; height: 30px;"alt="Löschen-Modus" class="tool-button" title="Löschen-Modus">
+
+                    <div id="drawingToolControls" style="display: none; margin-top: 10px;">
+                        <label for="colorPicker">Farbe:</label>
+                        <input type="color" id="colorPicker" value="#000000">
+
+                        <label for="lineWidth">Linienbreite:</label>
+                        <input type="number" id="lineWidth" value="2" min="1">
+
+                        <button id="clearCanvas">Alle Linien löschen</button>
+                    </div>
+                    </div>
+
+
+        <!-- Modales Fenster für Symbolauswahl -->
+        <div id="symbolMenu" style="display: none; position: absolute; top: 50px; left: 50px; background: white; border: 1px solid #ccc; border-radius: 5px; padding: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); z-index: 1000;">
+    <h3 style="margin-top: 0; text-align: center;">Wählen Sie ein Symbol</h3>
+    <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; padding: 10px;">
+        <div onclick="addSymbol('tank')" style="cursor: pointer; text-align: center; flex: 1; min-width: 80px;">
+            <img src="images/icon_tank.png" alt="Tank" style="width: 50px; height: 50px; margin-bottom: 5px;">
+            <span style="display: block; font-size: 14px;">Tank</span>
+        </div>
+        <div onclick="addSymbol('pump')" style="cursor: pointer; text-align: center; flex: 1; min-width: 80px;">
+            <img src="images/icon_pump.png" alt="Pumpe" style="width: 50px; height: 50px; margin-bottom: 5px;">
+            <span style=" color: black; display: block; font-size: 14px;">Pumpe</span>
+        </div>
+        <div onclick="addSymbol('ventil')" style="cursor: pointer; text-align: center; flex: 1; min-width: 80px;">
+            <img src="images/icon_ventil.png" alt="Ventil" style="width: 50px; height: 50px; margin-bottom: 5px;">
+            <span style="display: block; font-size: 14px;">Ventil</span>
+        </div>
+        <div onclick="addSymbol('flowMeter')" style="cursor: pointer; text-align: center; flex: 1; min-width: 80px;">
+            <img src="images/icon_measurement.png" alt="Durchflussmesser" style="width: 50px; height: 50px; margin-bottom: 5px;">
+            <span style="display: block; font-size: 14px;">Durchflussmesser</span>
+        </div>
+    </div>
+    <button onclick="closeSymbolMenu()" style="margin-top: 10px; background-color: #007BFF; color: white; border: none; padding: 10px; border-radius: 5px; width: 100%;">Schließen</button>
+</div>
+
+        <!-- <select id="elementSelector" onchange="addElementFromDropdown()">
+          <option value="">Symbol hinzufügen</option>
+          <option value="tank">Tank</option>
+          <option value="pump">Pumpe</option>
+          <option value="ventil">Ventil</option>
+          <option value="flowMeter">Durchflussmessung</option>
+        </select>-->
+        <div id="settings" style="display: none;"></div>
+
+</div>
+
+
+
+    <div class="simulation-container" id="simulationContainer"></div>
+
+    <div class="modal" id="elementModal">
+        <h3 id="modalTitle">Element hinzufügen</h3>
+        <label for="elementType">Elementtyp</label>
+        <select id="elementType" onchange="updateFormFields()">
+            <option value="tank">Tank</option>
+            <option value="pump">Pumpe</option>
+            <option value="flowMeter">Durchflussmesser</option>
+            <option value="levelDisplay">Füllstandsanzeige</option>
+        </select>
+
+        <label for="elementName">Name</label>
+        <input type="text" id="elementName" placeholder="z.B. T1">
+
+        <div id="tankFields" style="display:none;">
+            <label for="tankCapacity">Volumen Maximal (m³)</label>
+            <input type="number" id="tankCapacity" placeholder="z.B. 1000">
+
+            <label for="tankLevel">Startfüllstand (m³)</label>
+            <input type="number" id="tankLevel" placeholder="z.B. 500">
+
+            <label for="tankAlarmMax">Alarmierungsgrenze Max (%)</label>
+            <input type="number" id="tankAlarmMax" placeholder="z.B. 80">
+
+            <label for="tankAlarmMin">Alarmierungsgrenze Min (%)</label>
+            <input type="number" id="tankAlarmMin" placeholder="z.B. 20">
+        </div>
+
+        <div id="pumpFields" style="display:none;">
+            <label for="pumpFlow">Durchfluss Max (m³/h)</label>
+            <input type="number" id="pumpFlow" placeholder="z.B. 1000">
+
+            <label for="pumpSource">Quelle</label>
+            <select id="pumpSource">
+                <option value="">-</option>
+            </select>
+
+            <label for="pumpTarget">Ziel</label>
+            <select id="pumpTarget">
+                <option value="">-</option>
+            </select>
+        </div>
+
+
+        <div id="flowMeterFields" style="display:none;">
+            <label for="flowMeterPump">Durchfluss nach (Pumpe)</label>
+            <select id="flowMeterPump">
+                <option value="">-</option>
+            </select>
+        </div>
+
+        <div id="levelDisplayFields" style="display:none;">
+            <label for="levelDisplayTank">Verknüpfter Tank</label>
+            <select id="levelDisplayTank">
+                <option value="">-</option>
+            </select>
+        </div>
+
+        <button id="modalActionButton" onclick="addElement()">Hinzufügen</button>
+        <button onclick="closeModal()">Abbrechen</button>
+    </div>
+
+    <script>
+    const simulationContainer = document.getElementById('simulationContainer');
+    const colorPicker = document.getElementById('colorPicker');
+    const lineWidthInput = document.getElementById('lineWidth');
+    const clearCanvasButton = document.getElementById('clearCanvas');
+    const toggleDrawingToolButton = document.getElementById('toggleDrawingTool');
+    const moveLinesModeButton = document.getElementById('moveLinesMode');
+    const eraseModeButton = document.getElementById('eraseMode');
+    const drawingToolControls = document.getElementById('drawingToolControls');
+
+    let isDrawing = false;
+    let isMoving = false;
+    let isErasing = false;
+    let startX = 0;
+    let startY = 0;
+    let currentLine = null;
+    let selectedLine = null;
+
+    toggleDrawingToolButton.addEventListener('click', () => {
+        isDrawing = !isDrawing; // Zeichenmodus umschalten
+        isMoving = false; // Verschiebemodus deaktivieren
+        isErasing = false; // Löschmodus deaktivieren
+
+        moveLinesModeButton.title = 'Linien verschieben'; // Modustitel zurücksetzen
+        eraseModeButton.title = 'Löschen-Modus';
+
+        drawingToolControls.style.display = isDrawing ? 'block' : 'none'; // Bedienelemente ein-/ausblenden
+        toggleDrawingToolButton.title = isDrawing ? 'Zeichen-Tool schließen' : 'Zeichen-Tool starten';
+    });
+
+    moveLinesModeButton.addEventListener('click', () => {
+        isMoving = !isMoving;
+        isErasing = false;
+        moveLinesModeButton.title = isMoving ? 'Verschiebemodus beenden' : 'Linien verschieben';
+        eraseModeButton.title = 'Löschen-Modus';
+    });
+
+    eraseModeButton.addEventListener('click', () => {
+        isErasing = !isErasing;
+        isMoving = false;
+        eraseModeButton.title = isErasing ? 'Löschen-Modus beenden' : 'Löschen-Modus';
+        moveLinesModeButton.title = 'Linien verschieben';
+    });
+
+    simulationContainer.addEventListener('mousedown', (e) => {
+        if (isErasing && e.target.classList.contains('line')) {
+            e.target.remove();
+            return;
+        }
+
+        if (isMoving && e.target.classList.contains('line')) {
+            selectedLine = e.target;
+            const rect = simulationContainer.getBoundingClientRect();
+            startX = e.clientX - rect.left - parseFloat(selectedLine.style.left);
+            startY = e.clientY - rect.top - parseFloat(selectedLine.style.top);
+            return;
+        }
+
+        if (!isMoving && !isErasing && e.target === simulationContainer) {
+            const rect = simulationContainer.getBoundingClientRect();
+            startX = e.clientX - rect.left;
+            startY = e.clientY - rect.top;
+            isDrawing = true;
+
+            currentLine = document.createElement('div');
+            currentLine.classList.add('line');
+            currentLine.style.position = 'absolute';
+            currentLine.style.left = `${startX}px`;
+            currentLine.style.top = `${startY}px`;
+            currentLine.style.height = `${lineWidthInput.value}px`;
+            currentLine.style.backgroundColor = colorPicker.value;
+            simulationContainer.appendChild(currentLine);
+        }
+    });
+
+    simulationContainer.addEventListener('mousemove', (e) => {
+        const rect = simulationContainer.getBoundingClientRect();
+        const currentX = e.clientX - rect.left;
+        const currentY = e.clientY - rect.top;
+
+        if (isMoving && selectedLine) {
+            selectedLine.style.left = `${currentX - startX}px`;
+            selectedLine.style.top = `${currentY - startY}px`;
+            return;
+        }
+
+        if (isDrawing && currentLine) {
+            const deltaX = currentX - startX;
+            const deltaY = currentY - startY;
+            const length = Math.sqrt(deltaX ** 2 + deltaY ** 2);
+            const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
+
+            currentLine.style.width = `${length}px`;
+            currentLine.style.transform = `rotate(${angle}deg)`;
+            currentLine.style.transformOrigin = '0 0';
+        }
+    });
+
+    simulationContainer.addEventListener('mouseup', () => {
+        if (isMoving) {
+            selectedLine = null;
+        } else {
+            isDrawing = false;
+            currentLine = null;
+        }
+    });
+
+    simulationContainer.addEventListener('mouseleave', () => {
+        if (isMoving) {
+            selectedLine = null;
+        } else {
+            isDrawing = false;
+            currentLine = null;
+        }
+    });
+
+    clearCanvasButton.addEventListener('click', () => {
+        simulationContainer.innerHTML = '';
+    });
+
+
+
+    const deleteSimulationButton = document.getElementById('deleteSimulation');
+
+    // Funktion: Simulation speichern
+    function saveSimulation() {
+        localStorage.setItem('simulationData', simulationContainer.innerHTML);
+    }
+
+    // Funktion: Simulation laden
+    function loadSimulation() {
+        const savedData = localStorage.getItem('simulationData');
+        if (savedData) {
+            simulationContainer.innerHTML = savedData;
+
+            // Wiederhergestellte Linien erneut auswählbar machen
+            const lines = simulationContainer.querySelectorAll('.line');
+            lines.forEach(line => {
+                line.addEventListener('mousedown', (e) => {
+                    if (isErasing) {
+                        line.remove();
+                        saveSimulation(); // Speichern nach dem Entfernen
+                    }
+                });
+            });
+        }
+    }
+
+    // Funktion: Simulation löschen
+    deleteSimulationButton.addEventListener('click', () => {
+        localStorage.removeItem('simulationData');
+        simulationContainer.innerHTML = '';
+    });
+
+    // Speichern nach Änderungen
+    simulationContainer.addEventListener('mouseup', () => {
+        if (!isMoving) {
+            saveSimulation();
+        }
+    });
+
+    // Simulation laden beim Start
+    window.addEventListener('DOMContentLoaded', loadSimulation);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+    </body>
+    </html>
