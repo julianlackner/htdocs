@@ -1,4 +1,4 @@
-const socket = new WebSocket("ws://papiertechnik.duckdns.com:3000");
+const socket = new WebSocket("ws://papiertechnik.duckdns.org:3000");
 
 let currentIndex = 0;
 let currentQuestions = [];
