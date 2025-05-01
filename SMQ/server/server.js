@@ -5,7 +5,7 @@ const http = require("http");
 const WebSocket = require("ws");
 const app = express();
 const port = 3000;
-
+app.use(express.static("../")); // zeigt auf SMQ-Verzeichnis
 // Fragen laden
 const questions = JSON.parse(fs.readFileSync("questions.json", "utf-8"));
 
