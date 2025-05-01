@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Multiplayer Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Multiplayer Stilmittel-Quiz</h1>
+
+    <div>
+      <input id="playerName" placeholder="Dein Name">
+      <input id="roomCode" placeholder="Raumcode z. B. AB123">
+      <button onclick="createRoom()">Raum erstellen</button>
+      <button onclick="joinRoom()">Beitreten</button>
+    </div>
+
+    <div id="quiz" style="display:none;">
+      <p id="question"></p>
+      <div id="options"></div>
+      <button id="nextBtn" disabled>Weiter</button>
+    </div>
+
+    <div id="results" style="display:none;"></div>
+  </div>
+
+  <script src="ws-client.js"></script>
+</body>
+</html>
